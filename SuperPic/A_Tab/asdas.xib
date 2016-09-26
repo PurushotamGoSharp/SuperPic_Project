@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jxg-SS-ZUu">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="293" placeholderIntrinsicHeight="331" translatesAutoresizingMaskIntoConstraints="NO" id="qYB-aa-2Ly">
+                            <rect key="frame" x="154" y="134" width="293" height="331"/>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="qYB-aa-2Ly" secondAttribute="bottom" constant="135" id="2L7-8c-xS7"/>
+                        <constraint firstItem="qYB-aa-2Ly" firstAttribute="top" secondItem="jxg-SS-ZUu" secondAttribute="top" constant="134" id="Iay-Jx-eFj"/>
+                        <constraint firstAttribute="trailing" secondItem="qYB-aa-2Ly" secondAttribute="trailing" constant="153" id="bJs-tF-NOe"/>
+                        <constraint firstItem="qYB-aa-2Ly" firstAttribute="leading" secondItem="jxg-SS-ZUu" secondAttribute="leading" constant="154" id="mpt-LS-CAD"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="jxg-SS-ZUu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="BHK-cu-DiB"/>
+                <constraint firstAttribute="bottom" secondItem="jxg-SS-ZUu" secondAttribute="bottom" id="MXa-hi-P5B"/>
+                <constraint firstItem="jxg-SS-ZUu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="RKo-s8-GMe"/>
+                <constraint firstAttribute="trailing" secondItem="jxg-SS-ZUu" secondAttribute="trailing" id="TPK-dT-KaP"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
