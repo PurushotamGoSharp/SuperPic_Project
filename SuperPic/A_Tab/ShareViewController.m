@@ -355,14 +355,23 @@
    
     if (self.shareImageArray.count > 0)
     {
-        TakenImageModel *takenImg =[self.shareImageArray objectAtIndex:0];
         
-        NSString *tempImgPath = takenImg.imagePath;
-        
-        if ([tempImgPath.pathExtension isEqualToString:@"MOV"]) {
-            [self videoToShare:takenImg];
-        }else
+        if (self.shareImageArray.count == 1) {
             [self imagesToShare:self.shareImageArray];
+        }else{
+        
+            TakenImageModel *takenImg0 =[self.shareImageArray objectAtIndex:0];
+            TakenImageModel *takenImg1 =[self.shareImageArray objectAtIndex:1];
+            
+            NSString *tempImgPath0 = takenImg0.imagePath;
+            NSString *tempImgPath1 = takenImg1.imagePath;
+            
+            if ([tempImgPath0.pathExtension isEqualToString:@"MOV"] || [tempImgPath1.pathExtension isEqualToString:@"MOV"]) {
+                [self videoToShare:self.shareImageArray];
+            }else
+                [self imagesToShare:self.shareImageArray];
+        }
+        
     }
     
     
@@ -370,23 +379,38 @@
     
 }
 
-
-- (void)videoToShare:(TakenImageModel *)takenImg
+-(void) videoToShareStep2:(NSString *)thumbfileCode
 {
+    TakenImageModel *takenVideo =[self.shareImageArray objectAtIndex:1];
+    
+    
+    TakenImageModel *takenThumbnail;
+    TakenImageModel *takenThumbnail0 =[self.shareImageArray objectAtIndex:0];
+    
+    TakenImageModel *takenThumbnail1 =[self.shareImageArray objectAtIndex:1];
+    
+    if ([takenThumbnail0.imagePath.pathExtension isEqualToString:@"MOV"])
+    {
+        takenVideo = takenThumbnail0;
+    }else{
+        takenVideo = takenThumbnail1;
+    }
+        
     
     HUD = [MBProgressHUD showHUDAddedTo:self.view.window animated:YES];
     HUD.mode = MBProgressHUDModeDeterminateHorizontalBar;
-
+    
+    
     NSMutableArray* dateArray = [NSMutableArray new];
     NSMutableArray* pathURLArrays = [NSMutableArray new];
     
     
-    NSURL *filePathURL = [NSURL fileURLWithPath:takenImg.imagePath];
+    NSURL *filePathURL = [NSURL fileURLWithPath:takenVideo.imagePath];
     [pathURLArrays addObject:filePathURL];
     
-    NSString *dateString = [dateFormatter stringFromDate:takenImg.imgTakenDate];
+    NSString *dateString = [dateFormatter stringFromDate:takenVideo.imgTakenDate];
     [dateArray addObject:dateString];
-
+    
     
     NSData *dateJSONData = [NSJSONSerialization dataWithJSONObject:dateArray options:kNilOptions error:nil];
     NSString *dateJSONString = [[NSString alloc] initWithData:dateJSONData encoding:NSUTF8StringEncoding];
@@ -406,7 +430,7 @@
                                              for (NSURL *anURL in pathURLArrays)
                                              {
                                                  
-                                                     
+                                                 
                                                  NSData *videoData = [NSData dataWithContentsOfURL:anURL]; // I suppose my
                                                  [formData appendPartWithFileData:videoData name:@"files" fileName:@"filename.mov" mimeType:@"video/quicktime"];
                                                  
@@ -449,7 +473,7 @@
                                                          NSLog(@"ERROR IN SERVER SIDE> MOST PROBALY PRIMARY KEY DUPLICATION ERROR");
                                                      }
                                                  }
-                                                 [self postUploadedVideo:tempURLArray];
+                                                 [self postUploadedVideo:tempURLArray thumbfileCode:thumbfileCode];
                                                  
                                                  //             NSDictionary *imageListDict = (NSDictionary *)[aaDataDict[@"imageList"] firstObject];
                                              }
@@ -474,6 +498,124 @@
         HUD.progress = (CGFloat)totalBytesWritten/(CGFloat)totalBytesExpectedToWrite;
     }];
     [operation start];
+    
+
+}
+- (void)videoToShare:(NSMutableArray *)remainingArr
+{
+    
+    TakenImageModel *takenThumbnail;
+    TakenImageModel *takenThumbnail0 =[remainingArr objectAtIndex:0];
+    
+    TakenImageModel *takenThumbnail1 =[remainingArr objectAtIndex:1];
+    
+    if ([takenThumbnail0.imagePath.pathExtension isEqualToString:@"MOV"])
+    {
+        takenThumbnail = takenThumbnail1;
+    }else{
+        takenThumbnail = takenThumbnail0;
+    }
+    
+    HUD = [MBProgressHUD showHUDAddedTo:self.view.window animated:YES];
+    HUD.mode = MBProgressHUDModeDeterminateHorizontalBar;
+
+    
+    //////////////// thumbnail upload
+    NSMutableArray *pathURLArrays = [[NSMutableArray alloc] init];
+    NSMutableArray *dateArray = [[NSMutableArray alloc] init];
+    
+    
+    NSURL *filePathURL = [NSURL fileURLWithPath:takenThumbnail.imagePath];
+    [pathURLArrays addObject:filePathURL];
+    
+    NSString *dateString = [dateFormatter stringFromDate:takenThumbnail.imgTakenDate];
+    [dateArray addObject:dateString];
+
+    NSData *dateJSONData = [NSJSONSerialization dataWithJSONObject:dateArray options:kNilOptions error:nil];
+    NSString *dateJSONString = [[NSString alloc] initWithData:dateJSONData encoding:NSUTF8StringEncoding];
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    AFJSONRequestSerializer *requestSerializer = [AFJSONRequestSerializer serializer];
+    [requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    manager.requestSerializer = requestSerializer;
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"multipart/form-data"];
+    
+    NSString *userCodeString = [NSString stringWithFormat:@"{\"UserCode\":\"%@\",\"ImagesDateCreated\":%@}", currentUserCode,dateJSONString];
+    NSDictionary *parameters = @{@"request": userCodeString};
+    
+    NSString *URLString = [NSString stringWithFormat:@"%@%@", BASE_URL, FILE_UPLOAD_URL];
+    AFHTTPRequestOperation *operation = [manager POST:URLString parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData)
+                                         {
+                                             for (NSURL *anURL in pathURLArrays)
+                                             {
+                                                 
+                                                 
+                                                 [formData appendPartWithFileURL:anURL
+                                                                            name:@"files"
+                                                                           error:nil];
+                                                 
+                                             }
+                                             
+                                             
+                                         }
+                                              success:^(AFHTTPRequestOperation *operation, id responseObject)
+                                         {
+                                             //        numberOfImagesLeftToUpload--;
+                                             
+                                             NSDictionary *dict = (NSDictionary *)responseObject;
+                                             NSDictionary *aaDataDict =      [JsonUtil dictionaryFromKey:@"aaData" inDictionary:dict];
+                                             BOOL isSuccess =                [JsonUtil booleanFromKey:@"Success" inDictionary:aaDataDict];
+                                             
+                                             [MBProgressHUD hideAllHUDsForView:self.view.window animated:YES];
+                                             if (isSuccess) {
+                                                 
+                                                 
+                                                 NSArray *imageList = aaDataDict[@"imageList"];
+                                                 NSMutableArray *tempURLArray = [[NSMutableArray alloc] init];
+                                                 for (NSDictionary *imageListDict in imageList)
+                                                 {
+                                                     SuperPicAsset *asset = [[SuperPicAsset alloc] init];
+                                                     asset.successFromCloud = [imageListDict[@"Success"] boolValue];
+                                                     if (asset.successFromCloud) {
+                                                         
+                                                         NSDictionary *tempImageData =   [JsonUtil dictionaryFromKey:@"imageData" inDictionary:imageListDict];
+                                                         asset.fileName =            [JsonUtil stringFromKey:@"FileName" inDictionary:tempImageData];
+                                                         asset.fileCode =            [JsonUtil stringFromKey:@"Code" inDictionary:tempImageData];
+                                                         asset.serverFileURL =       [JsonUtil stringFromKey:@"Url" inDictionary:tempImageData];
+                                                         asset.userCode =                 [JsonUtil stringFromKey:@"UserCode" inDictionary:tempImageData];
+                                                         asset.imageId =             [JsonUtil numberFromKey:@"ID" inDictionary:tempImageData];
+                                                         
+                                                         
+                                                         [self videoToShareStep2:asset.fileCode];
+                                                     }
+                                                     else
+                                                     {
+                                                         NSLog(@"ERROR IN SERVER SIDE> MOST PROBALY PRIMARY KEY DUPLICATION ERROR");
+                                                     }
+                                                 }
+                                         
+                                                 
+                                             }
+                                         
+                                         }
+                                              failure:^(AFHTTPRequestOperation *operation, NSError *error)
+                                         {
+                                             NSLog(@"Error: %@", error);
+                                             
+                                             [MBProgressHUD hideAllHUDsForView:self.view.window animated:YES];
+                                             [self toast:@"Aww fiddlesticks! That share didn’t go through. Try it again!"];
+                                         
+                                         }];
+    
+    [operation setUploadProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
+        NSLog( @"wrote %lld/%lld", totalBytesWritten, totalBytesExpectedToWrite );
+        HUD.progress = (CGFloat)totalBytesWritten/(CGFloat)totalBytesExpectedToWrite;
+    }];
+    [operation start];
+    
+
+    
+    ////////////////
     
 }
 
@@ -830,7 +972,7 @@
     // {"request":{"UserCode":"LGPEAQXNLEZI","JSON":"{'FriendList':['1212','12112'],'ImageUrlList':['Q1RRT1U6R83P','2323232']}"}}
 }
 
-- (void)postUploadedVideo:(NSArray *)imgsURLArr {
+- (void)postUploadedVideo:(NSArray *)imgsURLArr thumbfileCode:(NSString*)thumbfileCode{
     /*
      * post link to server if shared or uploaded
      */
@@ -868,7 +1010,7 @@
         
         [appDel sendPushToUsersbyTags:filteredArray message:[NSString stringWithFormat:@"%@ has shared a video with you",[[NSUserDefaults standardUserDefaults] objectForKey:PROFILE_NAME_KEY]]];
         
-        NSData *JSONValueData = [NSJSONSerialization dataWithJSONObject:@{@"FriendList":filteredArray, @"VideoCode":imgsURLArr[0]}
+        NSData *JSONValueData = [NSJSONSerialization dataWithJSONObject:@{@"FriendList":filteredArray, @"VideoCode":imgsURLArr[0], @"ImageCode":thumbfileCode}
                                                                 options:kNilOptions
                                                                   error:nil];
         NSString *JSONValueString =[[NSString alloc] initWithData:JSONValueData

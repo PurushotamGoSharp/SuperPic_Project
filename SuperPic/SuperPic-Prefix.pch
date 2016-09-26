@@ -1,0 +1,29 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#define HEXCOLOR(c) [UIColor colorWithRed:((c>>24)&0xFF)/255.0 green:((c>>16)&0xFF)/255.0 blue:((c>>8)&0xFF)/255.0 alpha:((c)&0xFF)/255.0]
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #import <SystemConfiguration/SystemConfiguration.h>
+    #import <MobileCoreServices/MobileCoreServices.h>
+    #import <AVFoundation/AVFoundation.h>
+    #import <MBProgressHUD.h>
+    #import <AZSClient.h>
+    #import <AFNetworking.h>
+    #import <OneSignal/OneSignal.h>
+    #import "MUKMediaGallery.h"
+    #import <MUKToolkit/MUKToolkit.h>
+    #import <AFNetworking/AFNetworking.h>
+    #import <Mixpanel/Mixpanel.h>
+#endif

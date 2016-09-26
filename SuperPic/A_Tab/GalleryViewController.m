@@ -25,6 +25,8 @@
 #import "MediaAsset.h"
 #import "CarouselViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
+
+#import "SDWebImageManager.h"
 #define GET_SHARED_IMAGE_BY_ME [NSString stringWithFormat:@"%@%@",BASE_URL, @"image/user/"]
 
 #define GET_SHARED_IMAGE_BY_OTHERS  [NSString stringWithFormat:@"%@%@",BASE_URL, @"imageshare/user/"]
@@ -113,19 +115,6 @@
     NSLayoutConstraint *centerYConstraint = [NSLayoutConstraint constraintWithItem:spinner attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:spinner.superview attribute:NSLayoutAttributeCenterY multiplier:1.0f constant:0.0f];
     wrapperView.translatesAutoresizingMaskIntoConstraints = NO;
     [wrapperView addConstraints:@[centerXConstraint, centerYConstraint]];
-    
-    double delayInSeconds = 3.0;
-    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
-    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        self.mediaAssets = [NSMutableArray array];
-        [self reloadData];
-        
-        [self.collectionView.backgroundView removeFromSuperview];
-        self.collectionView.backgroundView = nil;
-    });
-
-
-    
     
 }
 
@@ -367,84 +356,87 @@
         return;
     }
     
-    if (asset.kind == MUKMediaKindImage) {
-        NSURLRequest *request = [NSURLRequest requestWithURL:asset.thumbnailURL];
-        AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-        op.userInfo = @{ @"index" : @(idx) };
-        
-        [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-            UIImage *image = nil;
-            
-            if ([responseObject length]) {
-                image = [UIImage imageWithData:responseObject];
-            }
-            
-            completionHandler(image);
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            completionHandler(nil);
-        }];
-        
-        [self.networkQueue addOperation:op];
-    }else if (asset.kind == MUKMediaKindVideo)
+//    if (asset.kind == MUKMediaKindImage)
     {
-        UIImage* image =  [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:asset.code];
-        if (image) {
-            completionHandler(image);
-        }else
-        {
+        
+        
+        SDWebImageManager *manager = [SDWebImageManager sharedManager];
+        [manager downloadImageWithURL:asset.thumbnailURL
+                              options:0
+                             progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                                 // progression tracking code
+                             }
+                            completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                                if (image) {
             
-          
-            
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-               
-                
-                
-                
-                NSURL *url = asset.thumbnailURL;
-                
-                //    NSURL *url = [NSURL URLWithString:@"http://media.w3.org/2010/05/sintel/trailer.mp4"];
-                AVURLAsset *asset1=[AVURLAsset assetWithURL:url];
-                AVAssetImageGenerator *imageGenerator = [[AVAssetImageGenerator alloc] initWithAsset:asset1];
-                imageGenerator.appliesPreferredTrackTransform = TRUE;
-                imageGenerator.maximumSize = CGSizeMake(80, 80);
-                
-                CMTime thumbTime = [asset1 duration];
-                thumbTime.value = 0;
-                
-                AVAssetImageGeneratorCompletionHandler handler = ^(CMTime requestedTime, CGImageRef im, CMTime actualTime, AVAssetImageGeneratorResult result, NSError *error){
-                    if (result != AVAssetImageGeneratorSucceeded) {
-                        NSLog(@"Fail generating image = %@", url);
-                        completionHandler(nil);
-                    }
-                    
-                    UIImage* resultUIImage = [UIImage imageWithCGImage:im];
-                    
-                    CGImageRelease(im);
-                    
-                    //resize image (use some code for resize)
-                    //<>
-                    //TODO: call some method to resize image
-//                    UIImage* resizedImage =  [resultUIImage fixOrientation];
-                    //<>
-                    
-                    
-                    
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        
-                        [[SDImageCache sharedImageCache] storeImage:resultUIImage forKey:asset.code];
-                        completionHandler(resultUIImage);
-                    });
-                };
-                
-                [imageGenerator generateCGImagesAsynchronouslyForTimes:[NSArray arrayWithObject:[NSValue valueWithCMTime:thumbTime]] completionHandler:handler];
-                
-                
-                
-            });
-            
-          
-        }
+                                    completionHandler(image);
+                                }else{
+                                    completionHandler(nil);
+                                }
+                            }];
+        
+        
     }
+//    else if (asset.kind == MUKMediaKindVideo)
+//    {
+//        UIImage* image =  [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:asset.code];
+//        if (image) {
+//            completionHandler(image);
+//        }else
+//        {
+//            
+//          
+//            
+//            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//               
+//                
+//                
+//                
+//                NSURL *url = asset.thumbnailURL;
+//                
+//                //    NSURL *url = [NSURL URLWithString:@"http://media.w3.org/2010/05/sintel/trailer.mp4"];
+//                AVURLAsset *asset1=[AVURLAsset assetWithURL:url];
+//                AVAssetImageGenerator *imageGenerator = [[AVAssetImageGenerator alloc] initWithAsset:asset1];
+//                imageGenerator.appliesPreferredTrackTransform = TRUE;
+//                imageGenerator.maximumSize = CGSizeMake(80, 80);
+//                
+//                CMTime thumbTime = [asset1 duration];
+//                thumbTime.value = 0;
+//                
+//                AVAssetImageGeneratorCompletionHandler handler = ^(CMTime requestedTime, CGImageRef im, CMTime actualTime, AVAssetImageGeneratorResult result, NSError *error){
+//                    if (result != AVAssetImageGeneratorSucceeded) {
+//                        NSLog(@"Fail generating image = %@", url);
+//                        completionHandler(nil);
+//                    }
+//                    
+//                    UIImage* resultUIImage = [UIImage imageWithCGImage:im];
+//                    
+//                    CGImageRelease(im);
+//                    
+//                    //resize image (use some code for resize)
+//                    //<>
+//                    //TODO: call some method to resize image
+////                    UIImage* resizedImage =  [resultUIImage fixOrientation];
+//                    //<>
+//                    
+//                    
+//                    
+//                    dispatch_async(dispatch_get_main_queue(), ^{
+//                        
+//                        [[SDImageCache sharedImageCache] storeImage:resultUIImage forKey:asset.code];
+//                        completionHandler(resultUIImage);
+//                    });
+//                };
+//                
+//                [imageGenerator generateCGImagesAsynchronouslyForTimes:[NSArray arrayWithObject:[NSValue valueWithCMTime:thumbTime]] completionHandler:handler];
+//                
+//                
+//                
+//            });
+//            
+//          
+//        }
+//    }
     
 }
 

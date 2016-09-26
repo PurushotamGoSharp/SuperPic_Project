@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "SuperPic": {
+      "applicationId": "0XZdHfO8FwuLAs3NuVs6tmAGP2YVicUFsoMauJnK"
+    },
+    "_default": {
+      "link": "SuperPic"
+    }
+  }
+}

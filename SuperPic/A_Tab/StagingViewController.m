@@ -28,7 +28,7 @@
 
 #import <MediaPlayer/MediaPlayer.h>
 #import <MobileCoreServices/MobileCoreServices.h>
-
+#import "UIImage+fixOrientation.h"
 
 @interface StagingViewController () <StagingFriendTableViewCellDelegate, UIGestureRecognizerDelegate> {
     AppDelegate *appDel;
@@ -67,7 +67,7 @@
     self.cancelBtn.clipsToBounds = YES;
     self.stagGalleryCollectionViewOutlet.allowsMultipleSelection = YES;
     
-    AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
  
     TakenImageModel *firstTakenImg = [delegate.recentlyCuaghtImagesArr objectAtIndex:0];
     if ([[[firstTakenImg.imagePath pathExtension] uppercaseString] isEqualToString:@"MOV"])
@@ -86,10 +86,48 @@
         
         [self.view bringSubviewToFront:self.shareBtn];
         [self.view bringSubviewToFront:self.cancelBtn];
+        
+        TakenImageModel *imgModel = [[TakenImageModel alloc] init];
+        
+        NSDate *curentDate = [NSDate date];
+        
+        imgModel.imgTakenDate = curentDate;
+        imgModel.imagePath = [self loadImageFromVideo];
+        
+        [delegate.recentlyCuaghtImagesArr addObject:imgModel];
     }else{
         
     }
     
+}
+
+
+- (NSString*)loadImageFromVideo {
+    
+    AppDelegate *delegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    
+    TakenImageModel *firstTakenImg = [delegate.recentlyCuaghtImagesArr objectAtIndex:0];
+    
+    AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:[NSURL fileURLWithPath:firstTakenImg.imagePath] options:nil];
+    AVAssetImageGenerator *generate = [[AVAssetImageGenerator alloc] initWithAsset:asset];
+    NSError *err = NULL;
+    CMTime time = CMTimeMake(1, 60);
+    //Grab image
+    CGImageRef imgRef = [generate copyCGImageAtTime:time actualTime:NULL error:&err];
+    NSLog(@"err==%@, imageRef==%@", err, imgRef);
+    
+    UIImage* finalImage = [[UIImage alloc] initWithCGImage:imgRef];
+    CGImageRelease(imgRef);
+    
+    UIImage* resizedImage =  [finalImage fixOrientation];
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"Image.png"];
+    
+    // Save image.
+     NSData *jpgData = UIImageJPEGRepresentation(resizedImage, 1.0);
+     [jpgData writeToFile:filePath atomically:YES];
+    return filePath;
 }
 
 - (void)viewWillAppear:(BOOL)animated

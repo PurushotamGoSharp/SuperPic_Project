@@ -249,8 +249,12 @@
             CGFloat camViewHeight = screenBounds.width * cameraAspectRatio;
             CGFloat scale = screenBounds.height / camViewHeight;
             
-            imagePickerController.cameraViewTransform = CGAffineTransformMakeTranslation(0, (screenBounds.height - camViewHeight) / 2.0);
-            imagePickerController.cameraViewTransform = CGAffineTransformScale(imagePickerController.cameraViewTransform, scale, scale);
+            
+            CGAffineTransform translate = CGAffineTransformMakeTranslation(0, (screenBounds.height - camViewHeight) / 2.0);
+            
+            CGAffineTransform scaletransform = CGAffineTransformScale(translate, scale, scale);
+    
+            imagePickerController.cameraViewTransform = scaletransform;
             
             
             

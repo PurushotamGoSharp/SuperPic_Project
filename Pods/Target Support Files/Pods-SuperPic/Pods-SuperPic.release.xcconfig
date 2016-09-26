@@ -1,0 +1,12 @@
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/OneSignal/iOS_SDK/Framework"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(SDKROOT)/usr/include/libxml2 $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/AZSClient" "${PODS_ROOT}/Headers/Public/MBProgressHUD" "${PODS_ROOT}/Headers/Public/MUKToolkit" "${PODS_ROOT}/Headers/Public/Mixpanel" "${PODS_ROOT}/Headers/Public/OneSignal" "${PODS_ROOT}/Headers/Public/SDWebImage" "${PODS_ROOT}/Headers/Public/XCDYouTubeKit"
+LIBRARY_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/AFNetworking" "$PODS_CONFIGURATION_BUILD_DIR/AZSClient" "$PODS_CONFIGURATION_BUILD_DIR/MBProgressHUD" "$PODS_CONFIGURATION_BUILD_DIR/MUKToolkit" "$PODS_CONFIGURATION_BUILD_DIR/Mixpanel" "$PODS_CONFIGURATION_BUILD_DIR/SDWebImage" "$PODS_CONFIGURATION_BUILD_DIR/XCDYouTubeKit"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/AFNetworking" -isystem "${PODS_ROOT}/Headers/Public/AZSClient" -isystem "${PODS_ROOT}/Headers/Public/MBProgressHUD" -isystem "${PODS_ROOT}/Headers/Public/MUKToolkit" -isystem "${PODS_ROOT}/Headers/Public/Mixpanel" -isystem "${PODS_ROOT}/Headers/Public/OneSignal" -isystem "${PODS_ROOT}/Headers/Public/SDWebImage" -isystem "${PODS_ROOT}/Headers/Public/XCDYouTubeKit"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"AFNetworking" -l"AZSClient" -l"MBProgressHUD" -l"MUKToolkit" -l"Mixpanel" -l"SDWebImage" -l"XCDYouTubeKit" -l"icucore" -l"xml2.2" -framework "Accelerate" -framework "CoreGraphics" -framework "CoreTelephony" -framework "Foundation" -framework "ImageIO" -framework "JavaScriptCore" -framework "MediaPlayer" -framework "MobileCoreServices" -framework "OneSignal" -framework "QuartzCore" -framework "Security" -framework "SystemConfiguration" -framework "UIKit"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_ROOT = ${SRCROOT}/Pods
+SWIFT_INCLUDE_PATHS[sdk=iphoneos*] = $(SRCROOT)/Pods/AZSClient/asl/iphoneos
+SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*] = $(SRCROOT)/Pods/AZSClient/asl/iphonesimulator
+SWIFT_INCLUDE_PATHS[sdk=macosx*] = $(SRCROOT)/Pods/AZSClient/asl/macosx
