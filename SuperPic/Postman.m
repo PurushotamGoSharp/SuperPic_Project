@@ -28,11 +28,12 @@
 {
     manager = [AFHTTPRequestOperationManager manager];
     AFJSONRequestSerializer *requestSerializer = [AFJSONRequestSerializer serializer];
-    
     [requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
-    
-    manager.requestSerializer = requestSerializer;
+    [requestSerializer setValue:@"x-access-token" forHTTPHeaderField:@"x-access-token"];
+//    [requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+//    [requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+      manager.requestSerializer = requestSerializer;
 }
 
 - (void)setTimeOutIntervel:(NSTimeInterval)timeOutIntervel
