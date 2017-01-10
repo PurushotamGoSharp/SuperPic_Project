@@ -232,6 +232,66 @@
 
 }
 
+#define GET_READ  [NSString stringWithFormat:@"%@%@",BASE_URL, @"read/"]
+-(void) sendMarkAsReadbyCode:(NSString*) sharecode
+{
+    
+    
+    
+    NSString* getReadURL = [NSString stringWithFormat:@"%@%@", GET_READ, sharecode];
+    
+    NSMutableURLRequest *request;
+    
+    
+    
+    request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:getReadURL] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20.0];
+    [request setHTTPMethod:@"GET"];
+    NSString *contentType = [NSString stringWithFormat:@"application/json"];
+    [request addValue:contentType forHTTPHeaderField: @"Content-Type"];
+    NSString *contentType1 = [NSString stringWithFormat:@"application/json"];
+    [request addValue:contentType1 forHTTPHeaderField: @"Accept"];
+    
+    NSMutableData *body = [NSMutableData data];
+    
+    
+    [request setHTTPBody:body];
+    [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[body length]]forHTTPHeaderField:@"Content-Length"];
+    
+
+    
+    [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            
+            if (error != nil)
+            {
+                return;
+            }
+        
+            NSDictionary *JSONDict = [NSJSONSerialization JSONObjectWithData:data
+                                                                     options:kNilOptions
+                                                                       error:nil];
+            if (JSONDict[@"aaData"][@"Success"])
+            {
+                
+                NSLog(@"sucess mark as read ");
+                
+            }
+
+            
+        });
+        
+        
+    }] resume];
+    
+    
+    
+    
+    
+}
+
+
 - (void)postman:(Postman *)postman gotSuccess:(NSData *)response forURL:(NSString *)urlString
 {
     if ([urlString isEqualToString:getAllImagesURLString])
@@ -247,15 +307,36 @@
             NSArray *urlsArray = JSONDict[@"aaData"][@"ImageData"];
             dateFormatter.dateFormat = @"yyyy-MM-dd'T'HH:mm:ss.SSS zzz";
 
+            NSLog(@"%@", [NSString stringWithFormat:@"page number %d, count %d", nCurrentPage, urlsArray.count]);
             int i = 0;
             for (NSDictionary *anImageURL in urlsArray)
             {
                 GallerysModel* model = [GallerysModel fromDictionary:anImageURL];
-//                model.id = [NSNumber numberWithInt:nPreviousCount + i];
+
                 
-//                NSLog(@"Model ID = %@", model.id);
                 
                 i++;
+                int k = [model.read intValue];
+                
+                if (k == 0) {
+                    [self sendMarkAsReadbyCode:model.sharedcode];
+                    
+                    NSString *curentUserCode =  [[NSUserDefaults standardUserDefaults] valueForKey:CURRENT_USER_CODE];
+                    
+                    if (![model.ownercode isEqualToString:curentUserCode]) {
+                        
+                        AppDelegate* appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+                        
+                        NSMutableArray *filteredArray = [NSMutableArray array];
+                        [filteredArray addObject:model.ownercode];
+                        
+                        [appDelegate sendPushToUsersbyTags:filteredArray message:[NSString stringWithFormat:@"%@ \\uD83D\\uDE01",[[NSUserDefaults standardUserDefaults] objectForKey:PROFILE_NAME_KEY]]];
+                        
+                        
+                    }
+                
+                    model.read = [NSNumber numberWithInt:1];
+                }
                 [model save];
                
             }
@@ -267,11 +348,17 @@
         
 
         
-    }else
-    {
-        
     }
+    
 }
+- (void)postman:(Postman *)postman gotFailure:(NSError *)error forURL:(NSString *)urlString
+{
+    [MBProgressHUD hideAllHUDsForView:self.tabBarController.view animated:YES];
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Network error" message:@"Please check your network connection" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    
+}
+
 
 -(void) reloadDataFromCoredata
 {
@@ -295,8 +382,9 @@
             asset.thumbnailURL = [NSURL URLWithString:anImageURL.thumbnailurl];
             asset.caption = anImageURL.ownername;
             asset.code = anImageURL.code;
+            asset.sharedcode = anImageURL.sharedcode;
             asset.ownercode = anImageURL.ownercode;
-            
+            asset.read = [anImageURL.read intValue];
             asset.date = dateString;
             [self.mediaAssets addObject:asset];
         }else{
@@ -304,25 +392,15 @@
             remoteVideoAsset.URL = [NSURL URLWithString:anImageURL.url];
             remoteVideoAsset.thumbnailURL = [NSURL URLWithString:anImageURL.thumbnailurl];
             remoteVideoAsset.code = anImageURL.code;
+            remoteVideoAsset.sharedcode = anImageURL.sharedcode;
             remoteVideoAsset.ownercode = anImageURL.ownercode;
             remoteVideoAsset.caption = anImageURL.ownername;
             remoteVideoAsset.date = dateString;
+            remoteVideoAsset.read = [anImageURL.read intValue];
             [self.mediaAssets addObject:remoteVideoAsset];
             
         }
-        NSString *curentUserCode =  [[NSUserDefaults standardUserDefaults] valueForKey:CURRENT_USER_CODE];
         
-        if (![anImageURL.ownercode isEqualToString:curentUserCode] && anImageURL.read == 0) {
-            
-            AppDelegate* appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-            
-            NSMutableArray *filteredArray = [NSMutableArray array];
-            [filteredArray addObject:anImageURL.ownercode];
-            
-            [appDelegate sendPushToUsersbyTags:filteredArray message:[NSString stringWithFormat:@"%@ send \\uD83D\\uDE01",[[NSUserDefaults standardUserDefaults] objectForKey:PROFILE_NAME_KEY]]];
-            
-            
-        }
         bEnd =  false;
         
     }
@@ -330,13 +408,7 @@
     
     [self reloadData];
 }
-- (void)postman:(Postman *)postman gotFailure:(NSError *)error forURL:(NSString *)urlString
-{
-    [MBProgressHUD hideAllHUDsForView:self.tabBarController.view animated:YES];
-    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Network error" message:@"Please check your network connection" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
-    
-}
+
 
 ////
 
@@ -377,66 +449,7 @@
         
         
     }
-//    else if (asset.kind == MUKMediaKindVideo)
-//    {
-//        UIImage* image =  [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:asset.code];
-//        if (image) {
-//            completionHandler(image);
-//        }else
-//        {
-//            
-//          
-//            
-//            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//               
-//                
-//                
-//                
-//                NSURL *url = asset.thumbnailURL;
-//                
-//                //    NSURL *url = [NSURL URLWithString:@"http://media.w3.org/2010/05/sintel/trailer.mp4"];
-//                AVURLAsset *asset1=[AVURLAsset assetWithURL:url];
-//                AVAssetImageGenerator *imageGenerator = [[AVAssetImageGenerator alloc] initWithAsset:asset1];
-//                imageGenerator.appliesPreferredTrackTransform = TRUE;
-//                imageGenerator.maximumSize = CGSizeMake(80, 80);
-//                
-//                CMTime thumbTime = [asset1 duration];
-//                thumbTime.value = 0;
-//                
-//                AVAssetImageGeneratorCompletionHandler handler = ^(CMTime requestedTime, CGImageRef im, CMTime actualTime, AVAssetImageGeneratorResult result, NSError *error){
-//                    if (result != AVAssetImageGeneratorSucceeded) {
-//                        NSLog(@"Fail generating image = %@", url);
-//                        completionHandler(nil);
-//                    }
-//                    
-//                    UIImage* resultUIImage = [UIImage imageWithCGImage:im];
-//                    
-//                    CGImageRelease(im);
-//                    
-//                    //resize image (use some code for resize)
-//                    //<>
-//                    //TODO: call some method to resize image
-////                    UIImage* resizedImage =  [resultUIImage fixOrientation];
-//                    //<>
-//                    
-//                    
-//                    
-//                    dispatch_async(dispatch_get_main_queue(), ^{
-//                        
-//                        [[SDImageCache sharedImageCache] storeImage:resultUIImage forKey:asset.code];
-//                        completionHandler(resultUIImage);
-//                    });
-//                };
-//                
-//                [imageGenerator generateCGImagesAsynchronouslyForTimes:[NSArray arrayWithObject:[NSValue valueWithCMTime:thumbTime]] completionHandler:handler];
-//                
-//                
-//                
-//            });
-//            
-//          
-//        }
-//    }
+    
     
 }
 
@@ -474,6 +487,7 @@
     return carouselViewController;
     
 }
+
 
 
 

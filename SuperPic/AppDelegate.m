@@ -16,7 +16,7 @@
 #import "ParseHandler.h"
 #import "MBProgressHUD.h"
 #import "DataProvider.h"
-
+#import <OneSignal/OneSignal.h>
 
 #define BASEPUSHURL @"https://onesignal.com/api/v1/notifications"
 
@@ -42,9 +42,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
    
     
-    self.oneSignal = [[OneSignal alloc] initWithLaunchOptions:launchOptions
-                                                        appId:@"c0b19b38-d027-4cf4-b0f0-1d6e62d17099"
-                                           handleNotification:nil];
+//    self.oneSignal = [[OneSignal alloc] initWithLaunchOptions:launchOptions
+//                                                        appId:@"78b48c09-e5d8-4a2f-95b7-27093c194e35"
+//                                           handleNotification:nil];
+    
+    [OneSignal initWithLaunchOptions:launchOptions appId:@"5eb5a37e-b458-11e3-ac11-000c2940e62c"];
     [ParseHandler sharedInstance];
     [self customizeSetUp];
 
@@ -80,7 +82,8 @@
     
     self.mixpanel = [Mixpanel sharedInstanceWithToken:@"9d70884ab80b1dc8eaea2714a045b2ab" launchOptions:launchOptions];
     
-    [self.mixpanel track:@"Launch" properties:@{  @"username" : [[NSUserDefaults standardUserDefaults] objectForKey:PROFILE_NAME_KEY]}];
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:PROFILE_NAME_KEY] != nil)
+        [self.mixpanel track:@"Launch" properties:@{  @"username" : [[NSUserDefaults standardUserDefaults] objectForKey:PROFILE_NAME_KEY]}];
     
     ///////////
     return YES;
@@ -289,7 +292,7 @@
     
     self.caughtImagesCount = 0;
     
-    [self checkAndCreateDatabase];
+    
     
     BOOL authenticatedUser = [[NSUserDefaults standardUserDefaults] boolForKey:SIGNED_UP_KEY];
     if (authenticatedUser)
@@ -333,7 +336,9 @@
     NSString *curentUserCode =  [[NSUserDefaults standardUserDefaults] valueForKey:CURRENT_USER_CODE];
     
     if (curentUserCode != nil) {
-        [self.oneSignal sendTag:@"usercode" value:curentUserCode];
+        
+        [OneSignal sendTag:@"usercode" value:curentUserCode];
+       // [self.oneSignal sendTag:@"usercode" value:curentUserCode];
     }
     NSSet* tags = [[NSSet alloc] initWithObjects:curentUserCode, nil];
     
@@ -345,8 +350,12 @@
     {
         tabDelegate = [[TabBarDelegate alloc] init];
     }
+    
+    
     rootTabBarController =  [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SPTabBarcontrollerSBIde"]; // UITabBarController* rootController =
     rootTabBarController.delegate = tabDelegate;
+
+    
     [rootTabBarController setSelectedIndex:1];
     self.window.rootViewController = rootTabBarController;
 }
@@ -357,8 +366,13 @@
     {
         tabDelegate = [[TabBarDelegate alloc] init];
     }
+
+
     rootTabBarController =  [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SPTabBarcontrollerSBIde"]; // UITabBarController* rootController =
     rootTabBarController.delegate = tabDelegate;
+    
+
+    
     [rootTabBarController setSelectedIndex:2];
     self.window.rootViewController = rootTabBarController;
 }
@@ -371,49 +385,18 @@
         if (tabDelegate == nil)
             tabDelegate = [[TabBarDelegate alloc] init];
 
-        rootTabBarController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SPTabBarcontrollerSBIde"]; // UITabBarController* rootController =
+        
+       
+        rootTabBarController =  [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SPTabBarcontrollerSBIde"]; // UITabBarController* rootController =
         rootTabBarController.delegate = tabDelegate;
+        
+        
+        
         [rootTabBarController setSelectedIndex:0];
         self.window.rootViewController = rootTabBarController;
     }
 }
 
-#pragma mark - SuperPic DB
-
-- (void) checkAndCreateDatabase
-{
-    // Setup some globals
-    
-    // Check if the SQL database has already been saved to the users phone, if not then copy it over
-    
-    // Create a FileManager object, we will use this to check the status
-    // of the database and to copy it over if required
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    
-    // Check if the database has already been created in the users filesystem
-    BOOL success = [fileManager fileExistsAtPath:[self databasePath]];
-    
-    // If the database already exists then return without doing anything
-    if(success) return;
-    
-    // If not then proceed to copy the database from the application to the users filesystem
-    
-    // Get the path to the database in the application package
-    NSString *databasePathFromApp = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:[self databaseName]];
-    
-    // Copy the database from the package to the users filesystem
-    [fileManager copyItemAtPath:databasePathFromApp toPath:[self databasePath] error:nil];
-}
-
-- (NSString *)databaseName {
-    NSString *databaseName = @"SuperPicDB.sqlite";
-    return databaseName;
-}
-
-- (NSString *)databasePath {
-    NSString *databasePath = [[self documentsDirectory] stringByAppendingPathComponent:[self databaseName]];
-    return databasePath;
-}
 
 - (NSString *)documentsDirectory {
     // Get the path to the documents directory and append the databaseName

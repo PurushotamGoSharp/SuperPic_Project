@@ -10,10 +10,17 @@
 #import "UIImageView+AFNetworking.h"
 #import "AFNetworking.h"
 #import <AssetsLibrary/AssetsLibrary.h>
+#import "AppDelegate.h"
+#import "Postman.h"
+#import "Constant.h"
 #define DEBUG_YOUTUBE_EXTRACTION_ALWAYS_FAIL    0
 #define DEBUG_LOAD_LOGGING                      0
 
-@interface MUKMediaCarouselViewController () <MUKMediaCarouselItemViewControllerDelegate, MUKMediaCarouselFullImageViewControllerDelegate, MUKMediaCarouselPlayerViewControllerDelegate>
+@interface MUKMediaCarouselViewController () <MUKMediaCarouselItemViewControllerDelegate, MUKMediaCarouselFullImageViewControllerDelegate, MUKMediaCarouselPlayerViewControllerDelegate, postmanDelegate>
+{
+    Postman *postman;
+    NSString* getReadURL;
+}
 @property (nonatomic) MUKMediaAttributesCache *mediaAttributesCache;
 @property (nonatomic) MUKMediaModelCache *imagesCache, *thumbnailImagesCache;
 @property (nonatomic) NSMutableIndexSet *loadingImageIndexes, *loadingThumbnailImageIndexes;
@@ -27,7 +34,7 @@
 @property (nonatomic) UILabel* nameLable;
 @property (nonatomic) UILabel* dateLable;
 @property (nonatomic) NSURL *mediaURL;
-@property (nonatomic) MUKMediaAttributes *attributes;
+@property (nonatomic) MUKMediaAttributes *currentMediaAttribute;
 
 @end
 
@@ -59,6 +66,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    postman = [[Postman alloc] init];
+    postman.delegate = self;
+    
+    
     self.view.backgroundColor = [UIColor blackColor];
     
     CGSize size = [UIScreen mainScreen].bounds.size;
@@ -93,10 +105,10 @@
 
     
     
-    MUKMediaAttributes* tmpAttributes = [self.carouselDelegate carouselViewController:self attributesForItemAtIndex:self.currentIndex];
-    self.nameLable.text = tmpAttributes.caption;
-    self.dateLable.text = [self convertDateString: tmpAttributes.date];
-    
+    self.currentMediaAttribute = [self.carouselDelegate carouselViewController:self attributesForItemAtIndex:self.currentIndex];
+    self.nameLable.text = self.currentMediaAttribute.caption;
+    self.dateLable.text = [self convertDateString: self.currentMediaAttribute.date];
+    //[self sendMarkAsReadbyCode];
     
 }
 
@@ -163,8 +175,8 @@
     }
     
     // Load attributes & configure
-    MUKMediaAttributes *attributes = [self mediaAttributesForItemAtIndex:idx];
-    [self configureItemViewController:itemViewController forMediaAttributes:attributes];
+    self.currentMediaAttribute = [self mediaAttributesForItemAtIndex:idx];
+    [self configureItemViewController:itemViewController forMediaAttributes:self.currentMediaAttribute];
     
     // Display view controller
     [self setViewControllers:@[itemViewController] direction:direction animated:animated completion:completionHandler];
@@ -219,13 +231,13 @@ static void CommonInitialization(MUKMediaCarouselViewController *viewController)
 - (MUKMediaCarouselItemViewController *)newItemViewControllerForMediaAtIndex:(NSInteger)idx
 {
     // Load attributes
-    MUKMediaAttributes *attributes = [self mediaAttributesForItemAtIndex:idx];
+    self.currentMediaAttribute = [self mediaAttributesForItemAtIndex:idx];
     
     // Choose the most appropriate class based on media kind
     Class vcClass = [MUKMediaCarouselFullImageViewController class];
     
-    if (attributes) {
-        switch (attributes.kind) {
+    if (self.currentMediaAttribute) {
+        switch (self.currentMediaAttribute.kind) {
             case MUKMediaKindAudio:
             case MUKMediaKindVideo:
                 vcClass = [MUKMediaCarouselPlayerViewController class];
@@ -238,7 +250,7 @@ static void CommonInitialization(MUKMediaCarouselViewController *viewController)
     
     // Allocate an instance
     MUKMediaCarouselItemViewController *viewController = [[vcClass alloc] initWithMediaIndex:idx];
-    viewController.captionLabel.text = attributes.caption;
+    viewController.captionLabel.text = self.currentMediaAttribute.caption;
     
     return viewController;
 }
@@ -349,7 +361,7 @@ static void CommonInitialization(MUKMediaCarouselViewController *viewController)
 - (void)configurePlayerViewController:(MUKMediaCarouselPlayerViewController *)viewController mediaURL:(NSURL *)mediaURL forMediaAttributes:(MUKMediaAttributes *)attributes
 {
     self.mediaURL = mediaURL;
-    self.attributes = attributes;
+    self.currentMediaAttribute = attributes;
     // Set media URL (this will create room for thumbnail)
     if (mediaURL) {
         [viewController setMediaURL:mediaURL];
@@ -717,12 +729,12 @@ static void CommonInitialization(MUKMediaCarouselViewController *viewController)
 - (BOOL)shouldDismissThumbnailAsNewPlaybackStartsInPlayerViewController:(MUKMediaCarouselPlayerViewController *)viewController
 {
     // Load attributes
-    MUKMediaAttributes *attributes = [self mediaAttributesForItemAtIndex:viewController.mediaIndex];
+    self.currentMediaAttribute = [self mediaAttributesForItemAtIndex:viewController.mediaIndex];
     
     BOOL shouldDismissThumbnail;
     
     // Keep thumbnail for audio tracks
-    if (attributes.kind == MUKMediaKindAudio) {
+    if (self.currentMediaAttribute.kind == MUKMediaKindAudio) {
         shouldDismissThumbnail = NO;
     }
     else {
@@ -828,13 +840,17 @@ static void CommonInitialization(MUKMediaCarouselViewController *viewController)
     MUKMediaCarouselItemViewController* tmp = (MUKMediaCarouselItemViewController*)[pageViewController.viewControllers lastObject];
     
     self.currentIndex = tmp.mediaIndex;
+    self.currentMediaAttribute = [self.carouselDelegate carouselViewController:self attributesForItemAtIndex:self.currentIndex];
     
     MUKMediaAttributes* tmpAttributes = [self.carouselDelegate carouselViewController:self attributesForItemAtIndex:self.currentIndex];
     self.nameLable.text = tmpAttributes.caption;
     self.dateLable.text = [self convertDateString:tmpAttributes.date];
     // Clean pending view controllers
     self.pendingViewControllers = nil;
+    
+    [self sendMarkAsReadbyCode];
 }
+
 
 #pragma mark - <UIPageViewControllerDataSource>
 
@@ -1057,6 +1073,63 @@ static void CommonInitialization(MUKMediaCarouselViewController *viewController)
             
         }
     }
+}
+
+#define GET_READ  [NSString stringWithFormat:@"%@%@",BASE_URL, @"read/"]
+-(void) sendMarkAsReadbyCode
+{
+    
+    if (self.currentMediaAttribute.read != 1) {
+        getReadURL = [NSString stringWithFormat:@"%@%@", GET_READ, self.currentMediaAttribute.sharedcode];
+        
+        [postman get:getReadURL];
+    }
+    
+    
+}
+
+
+//MARK: postman delegate
+- (void)postman:(Postman *)postman gotSuccess:(NSData *)response forURL:(NSString *)urlString
+{
+//    if ([urlString isEqualToString:getReadURL])
+//    {
+//        
+//        NSDictionary *JSONDict = [NSJSONSerialization JSONObjectWithData:response
+//                                                                 options:kNilOptions
+//                                                                   error:nil];
+//        if (JSONDict[@"aaData"][@"Success"])
+//        {
+//            
+//            NSString *curentUserCode =  [[NSUserDefaults standardUserDefaults] valueForKey:CURRENT_USER_CODE];
+//            
+//            if (![self.currentMediaAttribute.ownercode isEqualToString:curentUserCode] && self.currentMediaAttribute.read == 0) {
+//                
+//                AppDelegate* appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+//                
+//                NSMutableArray *filteredArray = [NSMutableArray array];
+//                [filteredArray addObject:self.currentMediaAttribute.ownercode];
+//                
+//                [appDelegate sendPushToUsersbyTags:filteredArray message:[NSString stringWithFormat:@"%@ \\uD83D\\uDE01",[[NSUserDefaults standardUserDefaults] objectForKey:PROFILE_NAME_KEY]]];
+//                
+//                
+//            }
+//            
+//            
+//        }
+//        
+//        
+//        
+//        
+//    }else
+//    {
+//        
+//    }
+}
+- (void)postman:(Postman *)postman gotFailure:(NSError *)error forURL:(NSString *)urlString
+{
+    
+    
 }
 
 

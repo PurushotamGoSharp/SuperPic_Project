@@ -189,7 +189,10 @@
             
             AppDelegate *appDelegateTemp = [[UIApplication sharedApplication] delegate];
             [appDelegateTemp authenticateUser:self.userNamerTF.text savePassword:self.passwordTF.text];
-            [appDelegateTemp.oneSignal sendTag:@"usercode" value:self.assetRegisterSuccess.userCode];
+            
+            [OneSignal sendTag:@"usercode" value:self.assetRegisterSuccess.userCode];
+
+           // [appDelegateTemp.oneSignal sendTag:@"usercode" value:self.assetRegisterSuccess.userCode];
             
             [appDelegateTemp showHomeScreen];
             

@@ -27,7 +27,7 @@
 #import "ParseHandler.h"
 
 
-#import "SPSQLiteManager.h"
+
 #import "FriendListsModel.h"
 
 #import "AFNetworking.h"
@@ -94,16 +94,8 @@
 
 -(void)viewWillAppear:(BOOL)animated
 {
-//    appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-//
-//    if (appDelegate.frienssListsArrGloble.count == 0)
-//    {
-//        [self getFriendsListFormAPI];
-//    }else
-//    {
-//        self.friendstableData = [appDelegate.frienssListsArrGloble copy];
-//    }
 
+    
       self.badgeIcon.image = [[UIImage imageNamed:@"badgeIcon"] resizableImageWithCapInsets:(UIEdgeInsetsMake(0, 10, 0, 10))];
     
     [self setupView];
@@ -256,7 +248,7 @@
             }
         }
         
-//        NSString *tempCellTitle = _friendstableData[indexPath.row];
+        
         [cell configureCell: tempCellTitle];
         [cell setDelegate:self];
         [self changeSelectedBackgroundFriendsTableViewCellViewColor:cell];
@@ -270,8 +262,7 @@
 {
     if (tableView == self.friendsTableView)
     {
-//        FriendListsModel *friendLists =  _friendstableData[indexPath.row-2];
-//        NSString *tempCellTitle = friendLists.profileName;
+        
         
         if (indexPath.row == 1)
         {
@@ -308,7 +299,7 @@
                 [self.friendsTableView deselectRowAtIndexPath:selectToIndex animated:YES];
             }
             selectAllFriends = NO;
-//            [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"isSendToAllFriends"];
+            
         }
     }
 }
@@ -322,21 +313,18 @@
 }
 
 - (void)changeSelectedBackgroundFriendsTableViewCellViewColor:(UITableViewCell *)friendsTableViewCell {
-    //    CGRect tempFrame = CGRectMake(cell.frame.origin.x, cell.frame.origin.y + 5, cell.frame.size.width, cell.frame.size.height - 10);
+   
     UIView *myBackView = [[UIView alloc] initWithFrame:friendsTableViewCell.frame];
     myBackView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Selected Contact"]];
-    //    myBackView.layer.cornerRadius = 10;
+  
     
     myBackView.layer.borderColor = [UIColor whiteColor].CGColor;
     myBackView.layer.borderWidth = 1.5f;
     
-    //    UIView *tempView = [[UIView alloc] initWithFrame:CGRectMake(cell.frame.origin.x, cell.frame.origin.y, cell.frame.size.width, 3.0)];
-    //    [tempView setBackgroundColor:[UIColor whiteColor]];
-    //    [myBackView addSubview:tempView];
-    friendsTableViewCell.selectedBackgroundView = myBackView;
+  
     
-    //    cell.accessoryView = [[ UIImageView alloc ]
-    //                            initWithImage:[UIImage imageNamed:@"Dropmenublue" ]];
+    friendsTableViewCell.selectedBackgroundView = myBackView;
+   
     
 }
 
@@ -464,7 +452,6 @@
                                                          asset.userCode =                 [JsonUtil stringFromKey:@"UserCode" inDictionary:tempImageData];
                                                          asset.imageId =             [JsonUtil numberFromKey:@"ID" inDictionary:tempImageData];
                                                          
-                                                         [self storeResponseInTable:asset];
                                                          [tempURLArray addObject:asset.fileCode];
                                                          
                                                      }
@@ -489,7 +476,7 @@
                                              numberOfImagesLeftToUpload--;
                                              
                                              [MBProgressHUD hideAllHUDsForView:self.view.window animated:YES];
-                                             [self toast:@"Aww fiddlesticks! That share didn’t go through. Try it again!"];
+                                             [self toast:@"That didn't work.😢Try sharing again!"];
                                              //[self hideProgressIfNeccessary]; --- 2015-06-25
                                          }];
     
@@ -603,7 +590,7 @@
                                              NSLog(@"Error: %@", error);
                                              
                                              [MBProgressHUD hideAllHUDsForView:self.view.window animated:YES];
-                                             [self toast:@"Aww fiddlesticks! That share didn’t go through. Try it again!"];
+                                             [self toast:@"That didn't work.😢Try sharing again!"];
                                          
                                          }];
     
@@ -638,27 +625,9 @@
         NSString *tempImgPath = takenImg.imagePath;
         NSString *tempImgName = [self imageName:tempImgPath];
         
-        SPSQLiteManager *tempSQLManager = [[SPSQLiteManager alloc] init];
-        /*
-         * check whether the image is already shared or uploaded to server in db
-         */
-        BOOL foundImage = [tempSQLManager findImage:tempImgName];
         
-        if (foundImage)
-        {
-            numberOfImagesLeftToUpload--;
-            [tempImageCodeLists addObject:tempSQLManager.imageCode];
-            NSLog(@"Image found in DB");
-        }
-        else
-        {
-            /*
-             * upload remaining images
-             */
-            //            numberOfURLsLeftToSend++;
-            //            [self uploadImagePath:takenImg];
-            [imagesToUpload addObject:takenImg];
-        }
+        [imagesToUpload addObject:takenImg];
+        
     }
     
     numberOfURLsLeftToSend++;
@@ -736,7 +705,6 @@
                                                          asset.userCode =                 [JsonUtil stringFromKey:@"UserCode" inDictionary:tempImageData];
                                                          asset.imageId =             [JsonUtil numberFromKey:@"ID" inDictionary:tempImageData];
                                                          
-                                                         [self storeResponseInTable:asset];
                                                          [tempURLArray addObject:asset.fileCode];
                                                          
                                                      }
@@ -761,7 +729,7 @@
                                              numberOfImagesLeftToUpload--;
                                              
                                              [MBProgressHUD hideAllHUDsForView:self.view.window animated:YES];
-                                             [self toast:@"Aww fiddlesticks! That share didn’t go through. Try it again!"];
+                                             [self toast:@"That didn't work.😢Try sharing again!"];
                                              //[self hideProgressIfNeccessary]; --- 2015-06-25
                                          }];
     
@@ -849,15 +817,6 @@
                                    error:nil];
      } success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
-         //        numberOfImagesLeftToUpload--;
-         
-         NSDictionary *dataDictionary = (NSDictionary *)responseObject;
-         SuperPicAsset *asset = [[SuperPicAsset alloc] initWithFileUploadDictionary:dataDictionary];
-         
-         if (asset.successFromCloud)
-         {
-             [self storeResponseInTable:asset];
-         }
          
          numberOfImagesLeftToUpload--;
          numberOfURLsLeftToSend--;
@@ -925,6 +884,7 @@
         
         [appDel sendPushToUsersbyTags:filteredArray message:[NSString stringWithFormat:@"%@ has shared %d photos with you",[[NSUserDefaults standardUserDefaults] objectForKey:PROFILE_NAME_KEY],imgsURLArr.count]];
         
+        [filteredArray addObject:currentUserCode];
         NSData *JSONValueData = [NSJSONSerialization dataWithJSONObject:@{@"FriendList":filteredArray, @"ImageList":imgsURLArr}
                                                                 options:kNilOptions
                                                                   error:nil];
@@ -1010,6 +970,8 @@
         
         [appDel sendPushToUsersbyTags:filteredArray message:[NSString stringWithFormat:@"%@ has shared a video with you",[[NSUserDefaults standardUserDefaults] objectForKey:PROFILE_NAME_KEY]]];
         
+        
+        [filteredArray addObject:currentUserCode];
         NSData *JSONValueData = [NSJSONSerialization dataWithJSONObject:@{@"FriendList":filteredArray, @"VideoCode":imgsURLArr[0], @"ImageCode":thumbfileCode}
                                                                 options:kNilOptions
                                                                   error:nil];
@@ -1043,7 +1005,7 @@
                                           
                                           if (numberOfURLsLeftToSend <= 0)
                                           {
-                                              [self toast:@"That was a rad share! Do it again!"];
+                                              [self toast:@"That didn't work.😢Try sharing again!"];
                                           }
                                           [self hideProgressIfNeccessary];
                                       }];
@@ -1215,7 +1177,7 @@
                 {
                     self.confirmIndexPath = indexPath;
                     
-                    AppDelegate * appDelegate = [UIApplication sharedApplication].delegate;
+                    appDelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
                     
                     [appDelegate sendPushToUsersbyTags:@[friendReq.code] message:[NSString stringWithFormat:@"%@ has accepted your friend request",friendReq.profileName]];
 
@@ -1318,58 +1280,5 @@
 }
 
 
-- (void)storeResponseInTable:(SuperPicAsset *)asset
-{
-    SPSQLiteManager *tempSQLManager = [[SPSQLiteManager alloc] init];
-    tempSQLManager.imageName = asset.fileName;
-    tempSQLManager.imageURL =  asset.serverFileURL;
-    tempSQLManager.imageCode =  asset.fileCode;
-    
-    //#warning make image status (if available in both then 1 else 0)
-    tempSQLManager.status =    1;
-    
-    tempSQLManager.userName = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:PROFILE_NAME_KEY];
-    [tempSQLManager addImageInfoRecord];
-    
-
-    
-}
-
-
-
-
-#pragma mark - parsehandler delegate
-#pragma mark - ParseHandlerDelegate
-- (void)completedParseReuest:(ParseResponseCode)response error:(NSString*)error
-{
-    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-
-    switch (response) {
-        case ParseResponseSuccess:
-            //
-        {
-            if ([ParseHandler sharedInstance].parseRequest == ParseRequestFriendAccept) {
-                [self.friendsRequestData removeObjectAtIndex:self.confirmIndexPath.row];
-                [self.friendsRequestTableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects:self.confirmIndexPath, nil] withRowAnimation:UITableViewRowAnimationFade];
-                
-                NSInteger badge =   [self.friendsRequestData count];
-                NSLog(@"======= %li",(long)badge);
-                
-                [self getAllFriendRequests];
-            }
-        }
-            break;
-        case ParseResponseSignUpError:
-            break;
-        case ParseResponseUserAlreadyLoggedIn:
-        default:
-            break;
-    }
-}
-
-- (void)analyzeResult
-{
-    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-}
 
 @end

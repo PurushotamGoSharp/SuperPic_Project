@@ -90,7 +90,10 @@
     }
     
 //    [self.imageView setImage:[UIImage imageWithContentsOfFile:sPLocalGalleryImgPath]];
-    [self.selecteImgView setHidden:!self.selected];
+    if (model.read == 0)
+        [self.selecteImgView setHidden:false];
+    else
+        [self.selecteImgView setHidden:true];
 }
 
 // -(void)configureCell:(SupperPicAsset *)asset

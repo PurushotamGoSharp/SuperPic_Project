@@ -27,7 +27,18 @@
         
         [viewcontrollers addObject:nav];
         self.viewControllers = viewcontrollers;
-      
+  
+        UITabBarItem *tabBarItem3 = [self.tabBar.items objectAtIndex:2];
+    
+        [tabBarItem3 setTitle:@""];
+    
+    
+        tabBarItem3.image = [UIImage imageNamed:@"tabgallery"];
+        tabBarItem3.selectedImage = [UIImage imageNamed:@"tabgallery_sel"];
+    
+        tabBarItem3.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
+    
+        
     }
     return self;
 }

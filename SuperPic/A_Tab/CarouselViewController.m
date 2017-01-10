@@ -44,6 +44,11 @@
     MUKMediaAttributes *attributes = [[MUKMediaAttributes alloc] initWithKind:asset.kind];
     attributes.caption = asset.caption;
     attributes.date = asset.date;
+    attributes.ownercode = asset.ownercode;
+    attributes.sharedcode = asset.sharedcode;
+
+    attributes.code = asset.code;
+    attributes.read = asset.read;
     return attributes;
 }
 

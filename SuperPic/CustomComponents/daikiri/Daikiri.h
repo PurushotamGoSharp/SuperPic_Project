@@ -16,7 +16,7 @@
     Daikiri         *_pivot;
 }
 
-@property(strong,nonatomic) NSString* code;
+@property(strong,nonatomic) NSString* sharedcode;
 
 
 // -----------------------------------------

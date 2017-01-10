@@ -17,14 +17,14 @@
 //==================================================================
 +(id)create:(Daikiri*)toCreate{
 //    
-    if(toCreate.code == nil){
+    if(toCreate.sharedcode == nil){
         NSLog(@"model without id");
         return nil;
     }
     
-    Daikiri* previous = [self.class find:toCreate.code];
+    Daikiri* previous = [self.class find:toCreate.sharedcode];
     if(previous) {
-        NSLog(@"Model already exists with id: %@, returning the one from the DB",toCreate.code);
+        NSLog(@"Model already exists with id: %@, returning the one from the DB",toCreate.sharedcode);
         return previous;
     }
     
@@ -36,7 +36,7 @@
     return toCreate;
 }
 -(bool)save{
-    Daikiri* previous = [self.class find:self.code];
+    Daikiri* previous = [self.class find:self.sharedcode];
     if(previous) {
         return [self update];
     }
@@ -51,7 +51,7 @@
         return [self.class saveCoreData];
     }
     else{
-        Daikiri* previous = [self.class find:self.code];
+        Daikiri* previous = [self.class find:self.sharedcode];
         if(!previous){
             NSLog(@"Model not in database");
             return false;
@@ -72,7 +72,7 @@
         return [self.class saveCoreData];
     }
     else{
-        Daikiri *toDelete = [self.class find:self.code];
+        Daikiri *toDelete = [self.class find:self.sharedcode];
         return [toDelete destroy];
     }
 }
@@ -108,15 +108,15 @@
 //==================================================================
 +(id)find:(NSNumber*)id{
     if(id == nil) return nil;
-    return [self.query where:@"code" is:id].first;
+    return [self.query where:@"sharedcode" is:id].first;
 }
 
 +(NSArray*)findIn:(NSArray*)identifiers{
-    return [self.query where:@"code" in:identifiers].get;
+    return [self.query where:@"sharedcode" in:identifiers].get;
 }
 
 +(id)first{
-    return [self first:@"code"];
+    return [self first:@"sharedcode"];
 }
 +(id)first:(NSString*)sort{
     return [self.query orderBy:sort].first;
@@ -139,7 +139,7 @@
 }
 
 -(NSArray*)hasMany:(NSString*)model foreignKey:(NSString*)foreignKey sort:(NSString *)sort{
-    return [[NSClassFromString(model).query where:foreignKey is:self.code] orderBy:sort].get;
+    return [[NSClassFromString(model).query where:foreignKey is:self.sharedcode] orderBy:sort].get;
 }
 
 -(NSArray*)belongsToMany:(NSString*)model pivot:(NSString*)pivotModel localKey:(NSString*)localKey foreignKey:(NSString*)foreingKey{
@@ -150,7 +150,7 @@
 -(NSArray*)belongsToMany:(NSString*)model pivot:(NSString*)pivotModel localKey:(NSString*)localKey foreignKey:(NSString*)foreingKey pivotSort:(NSString *)pivotSort{
     
     //Pivots
-    NSArray *pivots = [[NSClassFromString(pivotModel).query where:localKey is:self.code] orderBy:pivotSort].get;
+    NSArray *pivots = [[NSClassFromString(pivotModel).query where:localKey is:self.sharedcode] orderBy:pivotSort].get;
     
     //Objects (attaching pivots)
     NSMutableArray* finalResults = [NSMutableArray new];

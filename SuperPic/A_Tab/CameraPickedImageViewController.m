@@ -241,7 +241,7 @@
         {
             [[NSBundle mainBundle] loadNibNamed:@"OverlayView" owner:self options:nil];
             imagePickerController.cameraOverlayView = self.overlayView;
-
+            
             CGSize screenBounds = [UIScreen mainScreen].bounds.size;
             
             CGFloat cameraAspectRatio = 4.0f/3.0f;
@@ -253,7 +253,7 @@
             CGAffineTransform translate = CGAffineTransformMakeTranslation(0, (screenBounds.height - camViewHeight) / 2.0);
             
             CGAffineTransform scaletransform = CGAffineTransformScale(translate, scale, scale);
-    
+            
             imagePickerController.cameraViewTransform = scaletransform;
             
             
@@ -272,7 +272,7 @@
             [self.overlayView setFrame:CGRectMake(0, 0, screen.width, screen.height)];
             
             [imagePickerController.cameraOverlayView addSubview:self.radialView];
-
+            
             UITapGestureRecognizer* tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(takePhoto)];
             
             [self.radialView addGestureRecognizer:tapGesture];
@@ -316,6 +316,8 @@
 
     [self.tabBarController presentViewController:self.cameraImagePickerController animated:NO completion:^
     {
+        
+        
     }];
     
 }

@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.shawn.superpic</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -27,10 +27,16 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>taken photo and video</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Push notification</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Push notification</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>taken video</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>$(PRODUCT_NAME) uses photos</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

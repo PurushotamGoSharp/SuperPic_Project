@@ -21,16 +21,16 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - AZSClient (0.2.2)
-  - MBProgressHUD (0.9.2)
-  - Mixpanel (2.9.9):
-    - Mixpanel/Mixpanel (= 2.9.9)
-  - Mixpanel/Mixpanel (2.9.9)
+  - MBProgressHUD (1.0.0)
+  - Mixpanel (3.0.8):
+    - Mixpanel/Mixpanel (= 3.0.8)
+  - Mixpanel/Mixpanel (3.0.8)
   - MUKToolkit (1.1.4)
-  - OneSignal (1.13.3)
-  - SDWebImage (3.8.1):
-    - SDWebImage/Core (= 3.8.1)
-  - SDWebImage/Core (3.8.1)
-  - XCDYouTubeKit (2.5.2)
+  - OneSignal (2.3.4)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - XCDYouTubeKit (2.5.3)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6.3)
@@ -45,12 +45,12 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   AZSClient: 469db5162a0e59cc764715b233794e26ade29736
-  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
-  Mixpanel: 818d1940c2d9402453b349545022a86968097f57
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  Mixpanel: 550a23d5dd95f8e9cda21e697661ffddbc8da46b
   MUKToolkit: 68d80c87be918154bfd21e64158b1580c6dd2472
-  OneSignal: 434facae3389cb0d4d3fc57b9a6cf66db685205e
-  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
-  XCDYouTubeKit: bb81db52d5539f8f34c4081f344980ef38f4644d
+  OneSignal: c8f0d08ffa30fcf751c97a29639725877027e788
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  XCDYouTubeKit: 90690f9e3523735dc93b8024269d991b0cfffe78
 
 PODFILE CHECKSUM: 6c7bfd14b43e0067fd2141c3c4974af687d64b09
 

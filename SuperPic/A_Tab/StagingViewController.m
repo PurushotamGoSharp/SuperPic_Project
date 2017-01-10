@@ -228,7 +228,7 @@
 - (IBAction)dismissStagingVCAction:(id)sender
 {
     
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"SuperPic" message:@"Are you sure you want to lose these pictures?" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"SuperPic" message:@"Are you sure you want to lose?" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:@"Cancel", nil];
     alert.tag = 777;
     [alert show];
     

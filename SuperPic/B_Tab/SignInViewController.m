@@ -13,7 +13,7 @@
 #import "DataProvider.h"
 
 #import "MBProgressHUD.h"
-
+#import <CoreData/CoreData.h>
 #import "ParseHandler.h"
 
 @interface SignInViewController ()
@@ -204,15 +204,16 @@
             if (asset.isSuccess)
             {
 
-//                            PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-//                            currentInstallation[@"user"] = [PFUser currentUser];
-//                            [currentInstallation addUniqueObject:@"update" forKey:@"channels"];
-//                            [currentInstallation saveInBackground];
+                
                 
                 [weakSelf notifySignedInUser:asset];
 
                 
-                
+                if ([[NSUserDefaults standardUserDefaults] objectForKey:CURRENT_USER_CODE]) {
+                    
+                    
+                    
+                }
                 [[NSUserDefaults standardUserDefaults] setObject:asset.userCode forKey:CURRENT_USER_CODE];
                 
                 
@@ -251,7 +252,15 @@
         [[NSUserDefaults standardUserDefaults] setObject:asset.userCode forKey:CURRENT_USER_CODE];
         [[NSUserDefaults standardUserDefaults] setObject:asset.emailId forKey:CURRENT_USER_MAIL_ID];
 
-        [appDelegateTemp.oneSignal sendTag:@"usercode" value:asset.userCode];
+        
+        
+        [OneSignal sendTag:@"usercode" value:asset.userCode];
+ 
+       // [appDelegateTemp.oneSignal sendTag:@"usercode" value:asset.userCode];
+        
+        
+        
+        
         
         [[NSUserDefaults standardUserDefaults] synchronize];
     }

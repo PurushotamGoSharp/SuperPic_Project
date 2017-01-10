@@ -91,45 +91,6 @@
     
 
     
-    //Created object of tab bar item
-    UITabBarItem *tabBarItem1 = [self.tabBarController.tabBar.items objectAtIndex:0];
-    UITabBarItem *tabBarItem2 = [self.tabBarController.tabBar.items objectAtIndex:1];
-    UITabBarItem *tabBarItem3 = [self.tabBarController.tabBar.items objectAtIndex:2];
-    
-    
-    // Assign tab bar item with titles
-    [tabBarItem1 setTitle:@""];
-    [tabBarItem2 setTitle:@""];
-    [tabBarItem3 setTitle:@""];
-    
-    
-    
-    tabBarItem1.image = [[UIImage imageNamed:@"tabhome"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    tabBarItem1.selectedImage = [[UIImage imageNamed:@"tabhome_sel"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    
-    tabBarItem2.image = [[UIImage imageNamed:@"tabcamera"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    tabBarItem2.selectedImage = [[UIImage imageNamed:@"tabcamera_sel"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    //
-    tabBarItem3.image = [[UIImage imageNamed:@"tabgallery"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    tabBarItem3.selectedImage = [[UIImage imageNamed:@"tabgallery_sel"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    
-    tabBarItem1.imageInsets = UIEdgeInsetsMake(8, 0, -6, 0);
-    tabBarItem2.imageInsets = UIEdgeInsetsMake(8, 0, -6, 0);
-    tabBarItem3.imageInsets = UIEdgeInsetsMake(8, 0, -6, 0);
-    
-    
-   // tabBarItem3.badgeValue = @"0";
-    
-    UIFont *font = [UIFont fontWithName:@"HelveticaNeue" size:1.0f];
-    // removed warning by changing the key from UITextAttributeFont to  NSFontAttributeName
-    
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:70.0/255 green:117.0/255 blue:131.0/255 alpha:1],NSForegroundColorAttributeName, font, NSFontAttributeName, nil]
-                                             forState:UIControlStateSelected];
-    
-    //Set custom font and color  for all tab bar item text at unselected state
-    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName : font,NSForegroundColorAttributeName : [UIColor colorWithRed:166.0/255 green:166.0/255 blue:166.0/255 alpha:1 ]
-                                                        
-                                                        } forState:UIControlStateNormal];
 }
 
 - (void)goback

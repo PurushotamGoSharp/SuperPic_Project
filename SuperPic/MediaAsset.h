@@ -14,8 +14,10 @@
 @property (nonatomic) NSTimeInterval duration;
 @property (nonatomic) NSString *caption;
 @property (nonatomic) NSString *code;
+@property (nonatomic) NSString *sharedcode;
 @property (nonatomic) NSString *ownercode;
 @property (nonatomic) NSString *date;
+@property (readwrite) int read;
 - (instancetype)initWithKind:(MUKMediaKind)kind;
 
 @end

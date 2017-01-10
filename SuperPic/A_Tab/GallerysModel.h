@@ -27,6 +27,7 @@
 
 @property (nonatomic,strong)NSString *url;
 @property (nonatomic,strong)NSString *code;
+@property (nonatomic,strong)NSString *sharedcode;
 @property (nonatomic,strong)NSString *datecreated;
 @property (nonatomic,strong)NSString *filename;
 @property (nonatomic,strong)NSString *filetype;

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3uX-Ge-hnY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3uX-Ge-hnY">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--First View Controller-->
@@ -16,14 +16,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="superPicLogo" translatesAutoresizingMaskIntoConstraints="NO" id="vZi-R2-yPL">
-                                <rect key="frame" x="255" y="79" width="90" height="90"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Sign Up to see privately shared photos from your friends and family" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ER-gF-yey">
-                                <rect key="frame" x="143" y="252" width="314" height="63"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="superPicLogo" translatesAutoresizingMaskIntoConstraints="NO" id="vZi-R2-yPL"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up to see privately shared photos from your friends and family" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ER-gF-yey">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="314" id="EXt-y3-Zkv"/>
                                     <constraint firstAttribute="height" constant="63" id="Jcr-Lf-Acx"/>
@@ -31,7 +28,7 @@
                                     <constraint firstAttribute="width" constant="300" id="vVK-RR-w0x"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" red="0.31372549020000001" green="0.44705882349999998" blue="0.61568627450000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.31372549020000001" green="0.44705882349999998" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -48,18 +45,16 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H9r-Zo-ivN">
-                                <rect key="frame" x="167" y="323" width="266" height="60"/>
+                            <view clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H9r-Zo-ivN">
                                 <subviews>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlU-Ag-gUo">
-                                        <rect key="frame" x="20" y="9" width="106" height="42"/>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlU-Ag-gUo">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="115" id="4Lm-xO-xpx"/>
                                             <constraint firstAttribute="height" constant="43" id="iGq-Xb-cPr"/>
                                         </constraints>
                                         <state key="normal" title="Sign Up" backgroundImage="SignupButton.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -77,15 +72,14 @@
                                             <segue destination="Xu2-m6-5f2" kind="show" id="OlD-6Q-PFo"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="735-lC-ZG9">
-                                        <rect key="frame" x="146" y="9" width="108" height="42"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="735-lC-ZG9">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="115" id="0AP-Py-jLS"/>
                                             <constraint firstAttribute="height" constant="43" id="3Ht-cr-kij"/>
                                         </constraints>
                                         <state key="normal" title="Sign In" backgroundImage="SignupButton.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -104,7 +98,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="735-lC-ZG9" secondAttribute="trailing" constant="8" id="4gj-ZG-Ioc"/>
                                     <constraint firstAttribute="height" constant="60" id="57i-4b-Wsj"/>
@@ -135,7 +129,7 @@
                                 </variation>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="9ER-gF-yey" secondAttribute="centerY" id="0cJ-L0-x0o">
                                 <variation key="widthClass=compact" constant="0.5"/>
@@ -184,23 +178,20 @@
                         <viewControllerLayoutGuide type="bottom" id="WUQ-3P-4DA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Wr4-zE-FeF">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4rJ-sw-coJ">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7yD-yj-VS7">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wkf-YU-MrH">
-                                                <rect key="frame" x="227" y="169" width="147" height="42"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="147" id="Ld7-sx-hta"/>
                                                     <constraint firstAttribute="height" constant="42" id="VeR-bH-BB4"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                <color key="textColor" red="0.18039215689999999" green="0.30588235289999999" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.18039215689999999" green="0.30588235289999999" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
@@ -216,15 +207,14 @@
                                                 </variation>
                                             </label>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqD-yq-N7E">
-                                                <rect key="frame" x="219" y="393" width="165" height="36"/>
-                                                <color key="backgroundColor" red="0.2470588235" green="0.84705882349999995" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.2470588235" green="0.84705882349999995" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="T7t-A0-U9t"/>
                                                     <constraint firstAttribute="width" constant="165" id="xr7-F4-LuJ"/>
                                                 </constraints>
                                                 <state key="normal" title="Go">
-                                                    <color key="titleColor" red="0.027450980390000001" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleColor" red="0.027450980390000001" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -248,13 +238,12 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up to see privately shared photos from your friends and family" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MdU-5C-KJ5">
-                                                <rect key="frame" x="144" y="202" width="314" height="63"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="63" id="O8Y-mU-9Iw"/>
                                                     <constraint firstAttribute="width" constant="314" id="TpE-HP-Qcx"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <color key="textColor" red="0.31372549019607843" green="0.44705882352941179" blue="0.61568627450980395" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.31372549019607843" green="0.44705882352941179" blue="0.61568627450980395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
@@ -270,7 +259,6 @@
                                                 </variation>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="superPicLogo" translatesAutoresizingMaskIntoConstraints="NO" id="mgF-Zb-ZPU">
-                                                <rect key="frame" x="250" y="80" width="90" height="90"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="90" id="bW9-4z-Wk6"/>
                                                 </constraints>
@@ -286,7 +274,6 @@
                                                 </variation>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" background="Textbox.png" translatesAutoresizingMaskIntoConstraints="NO" id="RG3-cl-EKx">
-                                                <rect key="frame" x="144" y="266" width="314" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="314" id="2sv-7c-d8P"/>
                                                     <constraint firstAttribute="height" constant="36" id="VyJ-gy-Fje"/>
@@ -307,7 +294,6 @@
                                                 </variation>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" background="Textbox.png" translatesAutoresizingMaskIntoConstraints="NO" id="YGY-4W-M0i">
-                                                <rect key="frame" x="144" y="304" width="314" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="314" id="1I8-Qc-AtJ"/>
                                                     <constraint firstAttribute="height" constant="36" id="F8q-mM-QbE"/>
@@ -328,7 +314,6 @@
                                                 </variation>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" background="Textbox.png" translatesAutoresizingMaskIntoConstraints="NO" id="l9t-X4-h0d">
-                                                <rect key="frame" x="144" y="342" width="314" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="314" id="8Ak-3b-KwZ"/>
                                                     <constraint firstAttribute="height" constant="36" id="css-Cv-SBD"/>
@@ -349,13 +334,12 @@
                                                 </variation>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJX-Sj-OP8">
-                                                <rect key="frame" x="202" y="458" width="199" height="27"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="27" id="q1H-aD-9UW"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <state key="normal" title="Terms of Service and Privacy Policy">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <variation key="default">
                                                     <mask key="constraints">
@@ -372,16 +356,15 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFS-nS-7i2">
-                                                <rect key="frame" x="16" y="83" width="30" height="31"/>
                                                 <state key="normal" image="BackButton.png">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="backBtnAction:" destination="Xu2-m6-5f2" eventType="touchUpInside" id="hTU-cA-tf7"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="FFS-nS-7i2" firstAttribute="leading" secondItem="7yD-yj-VS7" secondAttribute="leading" constant="23" id="0Fl-ww-d0Z"/>
                                             <constraint firstAttribute="centerX" secondItem="RG3-cl-EKx" secondAttribute="centerX" id="0wW-Tg-2Fd"/>
@@ -420,18 +403,18 @@
                                                 <exclude reference="Mau-NP-01g"/>
                                                 <exclude reference="4aA-q9-50K"/>
                                                 <exclude reference="KTn-FO-i4N"/>
-                                                <exclude reference="ad6-xP-JiQ"/>
-                                                <exclude reference="u7D-Te-d16"/>
-                                                <exclude reference="R3G-dd-fkJ"/>
-                                                <exclude reference="TIN-gY-iJO"/>
                                                 <exclude reference="0wW-Tg-2Fd"/>
                                                 <exclude reference="tk1-FO-azn"/>
+                                                <exclude reference="R3G-dd-fkJ"/>
+                                                <exclude reference="TIN-gY-iJO"/>
                                                 <exclude reference="jDr-o9-KUW"/>
                                                 <exclude reference="ktg-m8-mFL"/>
-                                                <exclude reference="bkB-7n-XmJ"/>
-                                                <exclude reference="dZy-QP-PO8"/>
                                                 <exclude reference="QXC-bu-iE1"/>
                                                 <exclude reference="yu2-fH-2U2"/>
+                                                <exclude reference="bkB-7n-XmJ"/>
+                                                <exclude reference="dZy-QP-PO8"/>
+                                                <exclude reference="ad6-xP-JiQ"/>
+                                                <exclude reference="u7D-Te-d16"/>
                                                 <exclude reference="awe-JE-uXy"/>
                                                 <exclude reference="jdA-vv-jtC"/>
                                                 <exclude reference="w1w-MC-8PT"/>
@@ -454,18 +437,18 @@
                                                 <include reference="Mau-NP-01g"/>
                                                 <include reference="4aA-q9-50K"/>
                                                 <include reference="KTn-FO-i4N"/>
-                                                <include reference="ad6-xP-JiQ"/>
-                                                <include reference="u7D-Te-d16"/>
-                                                <include reference="R3G-dd-fkJ"/>
-                                                <include reference="TIN-gY-iJO"/>
                                                 <include reference="0wW-Tg-2Fd"/>
                                                 <include reference="tk1-FO-azn"/>
+                                                <include reference="R3G-dd-fkJ"/>
+                                                <include reference="TIN-gY-iJO"/>
                                                 <include reference="jDr-o9-KUW"/>
                                                 <include reference="ktg-m8-mFL"/>
-                                                <include reference="bkB-7n-XmJ"/>
-                                                <include reference="dZy-QP-PO8"/>
                                                 <include reference="QXC-bu-iE1"/>
                                                 <include reference="yu2-fH-2U2"/>
+                                                <include reference="bkB-7n-XmJ"/>
+                                                <include reference="dZy-QP-PO8"/>
+                                                <include reference="ad6-xP-JiQ"/>
+                                                <include reference="u7D-Te-d16"/>
                                                 <include reference="awe-JE-uXy"/>
                                                 <include reference="jdA-vv-jtC"/>
                                                 <include reference="w1w-MC-8PT"/>
@@ -509,7 +492,7 @@
                                 </variation>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="WUQ-3P-4DA" firstAttribute="top" secondItem="4rJ-sw-coJ" secondAttribute="bottom" id="M76-5g-aF5"/>
                             <constraint firstAttribute="trailing" secondItem="4rJ-sw-coJ" secondAttribute="trailing" id="YCD-bx-ygL"/>
@@ -560,27 +543,24 @@
                         <viewControllerLayoutGuide type="bottom" id="UUE-sy-3Nd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="HXL-ee-7N3">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Terms of Service and Privacy Policy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trm-3E-H5A">
-                                <rect key="frame" x="157" y="117" width="281" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms of Service and Privacy Policy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trm-3E-H5A">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uKq-03-Fk7">
-                                <rect key="frame" x="27" y="44" width="30" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uKq-03-Fk7">
                                 <state key="normal" image="BackButton.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="backBtnAction:" destination="jh6-DZ-omL" eventType="touchUpInside" id="uCW-wy-AeF"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="BQF-Zn-Zq7">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <string key="text">By accessing or using the SuperPic service (including website, mobile applications or any application, together, the “Service”) made available by SuperPic, however accessed, you agree to be bound by these terms of use ("Terms of Use"). The Service is owned or controlled by SuperPic LLC ("SuperPic"). These Terms of Use affect your legal rights and obligations. If you do not agree to be bound by all of these Terms of Use, do not use the Service.
 
 ARBITRATION NOTICE: YOU AGREE THAT DISPUTES BETWEEN YOU AND SUPERPIC WILL BE RESOLVED BY MANDATORY BINDING ARBITRATION AND YOU WAIVE ANY RIGHT TO PARTICIPATE IN A CLASS-ACTION LAWSUIT OR CLASS-WIDE ARBITRATION.
@@ -755,7 +735,7 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="BQF-Zn-Zq7" firstAttribute="trailing" secondItem="HXL-ee-7N3" secondAttribute="trailingMargin" id="0bd-6D-xTl"/>
                             <constraint firstItem="uKq-03-Fk7" firstAttribute="leading" secondItem="HXL-ee-7N3" secondAttribute="leadingMargin" constant="7" id="SBG-dd-DCg"/>
@@ -771,14 +751,14 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                 <exclude reference="BQF-Zn-Zq7"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="0bd-6D-xTl"/>
-                                <exclude reference="UPL-5M-DBu"/>
-                                <exclude reference="YJb-LV-kgg"/>
                                 <exclude reference="SBG-dd-DCg"/>
                                 <exclude reference="h4u-iZ-M0o"/>
                                 <exclude reference="VWk-8G-f5N"/>
                                 <exclude reference="leP-MI-Gt3"/>
                                 <exclude reference="hvW-n0-swl"/>
+                                <exclude reference="0bd-6D-xTl"/>
+                                <exclude reference="UPL-5M-DBu"/>
+                                <exclude reference="YJb-LV-kgg"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -786,14 +766,14 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                 <include reference="BQF-Zn-Zq7"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="0bd-6D-xTl"/>
-                                <include reference="UPL-5M-DBu"/>
-                                <include reference="YJb-LV-kgg"/>
                                 <include reference="SBG-dd-DCg"/>
                                 <include reference="h4u-iZ-M0o"/>
                                 <include reference="VWk-8G-f5N"/>
                                 <include reference="leP-MI-Gt3"/>
                                 <include reference="hvW-n0-swl"/>
+                                <include reference="0bd-6D-xTl"/>
+                                <include reference="UPL-5M-DBu"/>
+                                <include reference="YJb-LV-kgg"/>
                             </mask>
                         </variation>
                     </view>
@@ -802,136 +782,6 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rlr-Kh-hr7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1965" y="701"/>
-        </scene>
-        <!--Gallery View Controller-->
-        <scene sceneID="k52-No-Rr1">
-            <objects>
-                <viewController id="392-WO-BV3" customClass="GalleryViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="De4-Rn-xWV"/>
-                        <viewControllerLayoutGuide type="bottom" id="LUg-x4-A4o"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="J0s-fk-eby">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gNp-xJ-lDr">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="26P-SK-ANL">
-                                    <size key="itemSize" width="104" height="104"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GalleryCellReuseIdentifier" id="kCI-ff-Cvf" customClass="GalleryCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nkr-Hv-ahr">
-                                                    <rect key="frame" x="2" y="2" width="100" height="100"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEc-2P-1T5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="104" height="104"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <state key="normal">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="showGalleryImageAction:" destination="kCI-ff-Cvf" eventType="touchUpInside" id="OnL-O4-8Nv"/>
-                                                    </connections>
-                                                </button>
-                                                <imageView hidden="YES" userInteractionEnabled="NO" tag="200" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SolidBlueTickButton.png" translatesAutoresizingMaskIntoConstraints="NO" id="lXE-of-ZaE">
-                                                    <rect key="frame" x="79" y="79" width="17" height="17"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="videoplay.png" translatesAutoresizingMaskIntoConstraints="NO" id="sXN-8x-5CH">
-                                                    <rect key="frame" x="31" y="31" width="42" height="42"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="42" id="yJG-OJ-SlE"/>
-                                                        <constraint firstAttribute="width" constant="42" id="zdd-Ro-dtO"/>
-                                                    </constraints>
-                                                </imageView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="dEc-2P-1T5" secondAttribute="bottom" id="4A3-2H-GXy"/>
-                                            <constraint firstItem="dEc-2P-1T5" firstAttribute="top" secondItem="kCI-ff-Cvf" secondAttribute="top" id="4eM-HR-iQd"/>
-                                            <constraint firstItem="dEc-2P-1T5" firstAttribute="top" secondItem="kCI-ff-Cvf" secondAttribute="top" id="6Fj-Rw-LM1"/>
-                                            <constraint firstAttribute="trailing" secondItem="dEc-2P-1T5" secondAttribute="trailing" id="76Q-7b-t14"/>
-                                            <constraint firstAttribute="trailing" secondItem="nkr-Hv-ahr" secondAttribute="trailing" constant="2" id="C9B-zf-FXe"/>
-                                            <constraint firstAttribute="bottom" secondItem="dEc-2P-1T5" secondAttribute="bottom" id="JeS-OS-itW"/>
-                                            <constraint firstItem="nkr-Hv-ahr" firstAttribute="top" secondItem="kCI-ff-Cvf" secondAttribute="top" constant="2" id="Mbc-cj-wpX"/>
-                                            <constraint firstAttribute="bottom" secondItem="nkr-Hv-ahr" secondAttribute="bottom" constant="2" id="Ova-Om-5dD"/>
-                                            <constraint firstItem="sXN-8x-5CH" firstAttribute="centerX" secondItem="kCI-ff-Cvf" secondAttribute="centerX" id="SO2-O4-Qma"/>
-                                            <constraint firstItem="lXE-of-ZaE" firstAttribute="trailing" secondItem="kCI-ff-Cvf" secondAttribute="trailingMargin" id="XSW-sZ-Hfr"/>
-                                            <constraint firstItem="dEc-2P-1T5" firstAttribute="leading" secondItem="kCI-ff-Cvf" secondAttribute="leading" id="Xvk-OS-hf9"/>
-                                            <constraint firstAttribute="trailing" secondItem="dEc-2P-1T5" secondAttribute="trailing" id="a5h-Y3-lUz"/>
-                                            <constraint firstItem="dEc-2P-1T5" firstAttribute="top" secondItem="kCI-ff-Cvf" secondAttribute="top" id="aSX-DL-A61"/>
-                                            <constraint firstItem="nkr-Hv-ahr" firstAttribute="leading" secondItem="kCI-ff-Cvf" secondAttribute="leading" constant="2" id="duh-F6-nu7"/>
-                                            <constraint firstItem="dEc-2P-1T5" firstAttribute="leading" secondItem="kCI-ff-Cvf" secondAttribute="leading" id="mSC-aS-lGp"/>
-                                            <constraint firstItem="dEc-2P-1T5" firstAttribute="leading" secondItem="kCI-ff-Cvf" secondAttribute="leading" id="sWU-bj-nR2"/>
-                                            <constraint firstItem="sXN-8x-5CH" firstAttribute="centerY" secondItem="kCI-ff-Cvf" secondAttribute="centerY" id="uLu-HC-bDk"/>
-                                            <constraint firstItem="lXE-of-ZaE" firstAttribute="bottom" secondItem="kCI-ff-Cvf" secondAttribute="bottomMargin" id="zNV-NN-gFY"/>
-                                        </constraints>
-                                        <size key="customSize" width="104" height="104"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="JeS-OS-itW"/>
-                                                <exclude reference="a5h-Y3-lUz"/>
-                                                <exclude reference="aSX-DL-A61"/>
-                                                <exclude reference="mSC-aS-lGp"/>
-                                            </mask>
-                                        </variation>
-                                        <variation key="widthClass=compact">
-                                            <mask key="constraints">
-                                                <exclude reference="4A3-2H-GXy"/>
-                                                <exclude reference="4eM-HR-iQd"/>
-                                                <exclude reference="6Fj-Rw-LM1"/>
-                                                <exclude reference="76Q-7b-t14"/>
-                                                <include reference="JeS-OS-itW"/>
-                                                <exclude reference="Xvk-OS-hf9"/>
-                                                <include reference="a5h-Y3-lUz"/>
-                                                <include reference="aSX-DL-A61"/>
-                                                <include reference="mSC-aS-lGp"/>
-                                                <exclude reference="sWU-bj-nR2"/>
-                                            </mask>
-                                        </variation>
-                                        <connections>
-                                            <outlet property="galleryViewBtn" destination="dEc-2P-1T5" id="gmI-0f-VlT"/>
-                                            <outlet property="imageView" destination="nkr-Hv-ahr" id="gAN-Up-uKE"/>
-                                            <outlet property="selecteImgView" destination="lXE-of-ZaE" id="2xi-Hl-Gt1"/>
-                                            <outlet property="videoImageView" destination="sXN-8x-5CH" id="QCB-Ap-rVm"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="392-WO-BV3" id="C16-Iu-w0r"/>
-                                    <outlet property="delegate" destination="392-WO-BV3" id="Oa5-gh-cV5"/>
-                                </connections>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="gNp-xJ-lDr" firstAttribute="top" secondItem="J0s-fk-eby" secondAttribute="top" id="dEo-wg-SuW"/>
-                            <constraint firstItem="gNp-xJ-lDr" firstAttribute="leading" secondItem="J0s-fk-eby" secondAttribute="leading" id="eVj-mj-IQk"/>
-                            <constraint firstItem="LUg-x4-A4o" firstAttribute="top" secondItem="gNp-xJ-lDr" secondAttribute="bottom" id="gwu-v5-7fb"/>
-                            <constraint firstAttribute="trailing" secondItem="gNp-xJ-lDr" secondAttribute="trailing" id="x0L-TY-t7h"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="3wP-Dn-MQD"/>
-                    <connections>
-                        <outlet property="collectionViewOutlet" destination="gNp-xJ-lDr" id="DRK-Aw-Ke0"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KYX-QW-1PU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4303" y="1252"/>
         </scene>
         <!--Gallery Image Detail View Controller-->
         <scene sceneID="eZn-VG-e0A">
@@ -942,66 +792,60 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                         <viewControllerLayoutGuide type="bottom" id="l38-sh-41j"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uvc-YX-n8j">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GcU-Ch-ieB">
-                                <rect key="frame" x="0.0" y="107" width="600" height="410"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GcU-Ch-ieB">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JMi-gs-vXI">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="20"/>
-                                <color key="backgroundColor" red="0.21686168049999999" green="0.58667752539999996" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JMi-gs-vXI">
+                                <color key="backgroundColor" red="0.21686168049999999" green="0.58667752539999996" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="nId-TW-Mse"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="August 24" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GsQ-zz-Md4">
-                                <rect key="frame" x="8" y="52" width="584" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="August 24" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GsQ-zz-Md4">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="xzV-yS-WOr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Shawn" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfe-5p-JsM">
-                                <rect key="frame" x="8" y="28" width="584" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shawn" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfe-5p-JsM">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="48G-E2-RkJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysR-NU-klA">
-                                <rect key="frame" x="16" y="550" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysR-NU-klA">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="N59-QS-86a"/>
                                     <constraint firstAttribute="width" constant="30" id="bYY-u5-ggQ"/>
                                 </constraints>
                                 <state key="normal" image="close.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="removeGalleryObj:" destination="99b-5E-phy" eventType="touchUpInside" id="jEp-e9-riG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBs-RC-7Qq">
-                                <rect key="frame" x="554" y="550" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBs-RC-7Qq">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="bPD-a3-ze0"/>
                                     <constraint firstAttribute="height" constant="30" id="lAw-7w-2XH"/>
                                 </constraints>
                                 <state key="normal" image="download.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="saveToDeviceGallery:" destination="99b-5E-phy" eventType="touchUpInside" id="Ma9-S0-8bg"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="JMi-gs-vXI" firstAttribute="top" secondItem="uvc-YX-n8j" secondAttribute="topMargin" id="451-E0-pjl"/>
                             <constraint firstItem="GcU-Ch-ieB" firstAttribute="top" secondItem="JMi-gs-vXI" secondAttribute="bottom" constant="87" id="5nh-CD-5CW"/>
@@ -1041,17 +885,14 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                         <viewControllerLayoutGuide type="bottom" id="Jz3-z4-0dm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Nt5-Ye-SBH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tNh-9C-uMY">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tNh-9C-uMY">
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="300" translatesAutoresizingMaskIntoConstraints="NO" id="FRz-9o-858">
-                                        <rect key="frame" x="150" y="118" width="300" height="300"/>
-                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="300" translatesAutoresizingMaskIntoConstraints="NO" id="FRz-9o-858"/>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="FRz-9o-858" firstAttribute="top" secondItem="tNh-9C-uMY" secondAttribute="top" constant="118" id="Cm9-Me-Ybw"/>
                                     <constraint firstItem="FRz-9o-858" firstAttribute="leading" secondItem="tNh-9C-uMY" secondAttribute="leading" constant="150" id="UaI-sA-0d3"/>
@@ -1063,7 +904,7 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                 </connections>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="tNh-9C-uMY" firstAttribute="leading" secondItem="Nt5-Ye-SBH" secondAttribute="leadingMargin" constant="-16" id="0D3-gS-S3Z"/>
                             <constraint firstItem="Jz3-z4-0dm" firstAttribute="top" secondItem="tNh-9C-uMY" secondAttribute="bottom" id="I0h-Py-sRu"/>
@@ -1102,24 +943,23 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                         <viewControllerLayoutGuide type="bottom" id="FcZ-jO-pU2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hNm-Qx-fxc">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8z-hA-qjh">
-                                <rect key="frame" x="552" y="96" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Ebl-KI-axC"/>
                                     <constraint firstAttribute="width" constant="30" id="g6m-0a-xJn"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="CloseWindow">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="takeToBackHome:" destination="KLM-fo-8r5" eventType="touchUpInside" id="rZK-pe-aHh"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="u8z-hA-qjh" firstAttribute="top" secondItem="KFg-0T-w1j" secondAttribute="bottom" constant="32" id="I6p-le-Lj2"/>
                             <constraint firstAttribute="trailing" secondItem="u8z-hA-qjh" secondAttribute="trailing" constant="18" id="jHY-bV-jtk"/>
@@ -1145,19 +985,18 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                         <viewControllerLayoutGuide type="bottom" id="a9K-Gl-vO4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pN7-OP-sud">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foI-3d-OC5">
-                                <rect key="frame" x="127" y="498" width="458" height="45"/>
-                                <color key="backgroundColor" red="0.2470588235" green="0.84705882349999995" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.2470588235" green="0.84705882349999995" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="AHH-Ey-Wla"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="NEXT">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <state key="selected" backgroundImage="GreenButton click.png"/>
                                 <connections>
@@ -1165,8 +1004,7 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0JI-eZ-Gus">
-                                <rect key="frame" x="0.0" y="64" width="600" height="426"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="F8A-WJ-1go">
                                     <size key="itemSize" width="231" height="244"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -1175,21 +1013,17 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SCVCell" id="Kw2-W1-6Qk" customClass="StagingCollectionViewCell">
-                                        <rect key="frame" x="5" y="5" width="244" height="244"/>
+                                        <rect key="frame" x="66" y="5" width="244" height="244"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="244" height="244"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="601" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jJc-9U-LWd">
-                                                    <rect key="frame" x="0.0" y="0.0" width="244" height="244"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
-                                                <imageView hidden="YES" userInteractionEnabled="NO" tag="602" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sad_face_512.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gmo-gd-Tba">
-                                                    <rect key="frame" x="32" y="32" width="180" height="180"/>
-                                                </imageView>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" tag="602" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sad_face_512.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gmo-gd-Tba"/>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
                                             <constraint firstAttribute="trailingMargin" secondItem="Gmo-gd-Tba" secondAttribute="trailing" constant="24" id="2gR-VL-Sgu"/>
@@ -1214,23 +1048,22 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                 </connections>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47Y-fo-Lqj" userLabel="Go back and lose current pictures">
-                                <rect key="frame" x="15" y="498" width="104" height="45"/>
-                                <color key="backgroundColor" red="1" green="0.709235495999335" blue="0.69478421647578459" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.709235495999335" blue="0.69478421647578459" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="104" id="NOd-uS-H4E"/>
                                     <constraint firstAttribute="height" constant="45" id="xBQ-8i-cYr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="LOSE">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="dismissStagingVCAction:" destination="9Ta-zX-X73" eventType="touchUpInside" id="x1B-Li-seL"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="0JI-eZ-Gus" secondAttribute="trailing" id="1xF-Z9-hzi"/>
                             <constraint firstAttribute="trailing" secondItem="foI-3d-OC5" secondAttribute="trailing" constant="15" id="3aS-sH-bN5"/>
@@ -1264,91 +1097,82 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                         <viewControllerLayoutGuide type="bottom" id="FlL-m9-KeA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="L7s-7l-8TV">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zH7-Yy-0QY">
-                                <rect key="frame" x="0.0" y="64" width="300" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Lgk-ch-Yr6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Friends">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="addressBookContactsAction:" destination="nc2-kk-9hv" eventType="touchUpInside" id="b5W-nh-bJm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ppm-86-9G0">
-                                <rect key="frame" x="301" y="63" width="300" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="eUC-WC-VCs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Requests">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="newRequestsAction:" destination="nc2-kk-9hv" eventType="touchUpInside" id="YSe-TH-IVf"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="smU-yz-fbR">
-                                <rect key="frame" x="370" y="103" width="160" height="6"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="2Jy-In-5on"/>
                                     <constraint firstAttribute="height" constant="6" id="s9t-bl-QRS"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eiy-jm-ROv">
-                                <rect key="frame" x="70" y="104" width="160" height="6"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="6" id="KJ3-qp-ODo"/>
                                     <constraint firstAttribute="width" constant="160" id="hAI-4l-b9I"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="liA-rI-ydt">
-                                <rect key="frame" x="0.0" y="109" width="600" height="1"/>
-                                <color key="backgroundColor" red="0.45882352941176469" green="0.55294117647058827" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.45882352941176469" green="0.55294117647058827" blue="0.68235294117647061" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="cfU-Nf-nWB"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lf6-m1-oAk">
-                                <rect key="frame" x="0.0" y="115" width="600" height="436"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yMQ-Dq-KO4">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="382"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendTableCellIdentifier" rowHeight="64" id="4VX-8C-zBz" customClass="FriendsTableViewCell">
-                                                <rect key="frame" x="0.0" y="22" width="600" height="64"/>
+                                                <rect key="frame" x="0.0" y="22" width="1000" height="64"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4VX-8C-zBz" id="LHX-AZ-hVm">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                                    <frame key="frameInset" width="1000" height="64"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WdU-0z-oyD">
-                                                            <rect key="frame" x="10" y="21" width="479" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="b7I-Nl-mxs"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button hidden="YES" opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E25-hc-NBa">
-                                                            <rect key="frame" x="578" y="24" width="6" height="16"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="16" id="IXf-lD-C93"/>
                                                                 <constraint firstAttribute="width" constant="6" id="KIp-4E-MzH"/>
                                                             </constraints>
                                                             <state key="normal" image="Dropmenublue.png">
-                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
                                                             <state key="selected" image="DropMenugray.png"/>
                                                             <connections>
@@ -1356,17 +1180,15 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="wNX-FA-Zxj">
-                                                            <rect key="frame" x="520" y="21" width="50" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="Fwk-Q8-yHG"/>
                                                                 <constraint firstAttribute="width" constant="50" id="bce-9Y-tdo"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.png" translatesAutoresizingMaskIntoConstraints="NO" id="cE8-y7-Orc">
-                                                            <rect key="frame" x="497" y="25" width="15" height="14"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="14" id="VgB-ln-woH"/>
                                                                 <constraint firstAttribute="width" constant="15" id="bwM-FP-b8W"/>
@@ -1392,34 +1214,27 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
-                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="37" width="400" height="0.0"/>
-                                        </variation>
                                         <connections>
                                             <outlet property="dataSource" destination="nc2-kk-9hv" id="Jed-vX-1SS"/>
                                             <outlet property="delegate" destination="nc2-kk-9hv" id="z0l-GP-F5E"/>
                                         </connections>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LK0-Mg-qv7">
-                                        <rect key="frame" x="8" y="390" width="584" height="44"/>
-                                        <color key="backgroundColor" red="0.24705882352941178" green="0.84705882352941175" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.24705882352941178" green="0.84705882352941175" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="ias-c1-1KX"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="ADD FRIENDS">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <state key="selected" backgroundImage="GreenButton click.png"/>
-                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="8" y="45" width="384" height="44"/>
-                                        </variation>
                                         <connections>
                                             <action selector="clickAddFriends:" destination="nc2-kk-9hv" eventType="touchUpInside" id="dqS-qR-FV2"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="yMQ-Dq-KO4" firstAttribute="leading" secondItem="Lf6-m1-oAk" secondAttribute="leading" id="4fp-c9-hqc"/>
                                     <constraint firstAttribute="trailing" secondItem="yMQ-Dq-KO4" secondAttribute="trailing" id="55H-fF-tio"/>
@@ -1430,38 +1245,33 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                     <constraint firstItem="yMQ-Dq-KO4" firstAttribute="top" secondItem="Lf6-m1-oAk" secondAttribute="top" id="rHh-zR-1Iu"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badgeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="4kq-Xd-8FM">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badgeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="4kq-Xd-8FM"/>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="64" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="s2a-zz-Dbk">
-                                <rect key="frame" x="0.0" y="110" width="600" height="440"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuestTVCIdentifier" rowHeight="64" id="FGE-kn-JUf" customClass="RequestTableViewCell">
-                                        <rect key="frame" x="0.0" y="22" width="600" height="64"/>
+                                        <rect key="frame" x="0.0" y="22" width="1000" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FGE-kn-JUf" id="lzm-Se-rme">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="63"/>
+                                            <frame key="frameInset" width="1000" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="200" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ppe-bI-Cie">
-                                                    <rect key="frame" x="9" y="21" width="320" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="WPd-PS-dN1"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fj9-0f-fCD">
-                                                    <rect key="frame" x="418" y="17" width="80" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="kFM-RD-zVX"/>
                                                         <constraint firstAttribute="height" constant="30" id="v6z-GB-UWm"/>
                                                     </constraints>
                                                     <state key="normal" title="Confirm" backgroundImage="signButton Small.png">
-                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <state key="selected" backgroundImage="signButton click small.png"/>
                                                     <connections>
@@ -1469,14 +1279,13 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M24-3I-pJP">
-                                                    <rect key="frame" x="505" y="17" width="80" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="0Xw-ie-8fs"/>
                                                         <constraint firstAttribute="width" constant="80" id="5Om-lQ-COw"/>
                                                     </constraints>
                                                     <state key="normal" title="Ignore" backgroundImage="signButton Small.png">
-                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <state key="selected" backgroundImage="signButton click small.png"/>
                                                     <connections>
@@ -1484,17 +1293,15 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="lhj-xM-JcD">
-                                                    <rect key="frame" x="360" y="21" width="50" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="PVE-bk-Kvv"/>
                                                         <constraint firstAttribute="height" constant="21" id="QOp-GI-Kr7"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.png" translatesAutoresizingMaskIntoConstraints="NO" id="TWl-1T-QJO">
-                                                    <rect key="frame" x="337" y="25" width="15" height="14"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="14" id="lqT-it-D9f"/>
                                                         <constraint firstAttribute="width" constant="15" id="rHi-QW-7ms"/>
@@ -1527,16 +1334,15 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aid-yW-8tI">
-                                <rect key="frame" x="542" y="67" width="17" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="17" id="FMh-0L-51X"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="smU-yz-fbR" firstAttribute="top" secondItem="ppm-86-9G0" secondAttribute="bottom" id="044-2T-rmt"/>
                             <constraint firstItem="FlL-m9-KeA" firstAttribute="top" secondItem="s2a-zz-Dbk" secondAttribute="bottom" constant="6" id="1Nq-tm-ZTq"/>
@@ -1544,7 +1350,6 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                             <constraint firstItem="zH7-Yy-0QY" firstAttribute="width" secondItem="ppm-86-9G0" secondAttribute="width" id="3Z8-Cy-3H7"/>
                             <constraint firstItem="liA-rI-ydt" firstAttribute="top" secondItem="zH7-Yy-0QY" secondAttribute="bottom" constant="5" id="3hS-ht-J69"/>
                             <constraint firstItem="FlL-m9-KeA" firstAttribute="top" secondItem="Lf6-m1-oAk" secondAttribute="bottom" constant="5" id="4nV-3J-2Be"/>
-                            <constraint firstItem="aid-yW-8tI" firstAttribute="centerX" secondItem="ppm-86-9G0" secondAttribute="centerX" constant="39.5" id="5rv-Vs-uYW"/>
                             <constraint firstItem="FlL-m9-KeA" firstAttribute="top" secondItem="Lf6-m1-oAk" secondAttribute="bottom" constant="5" id="FWD-7g-9iC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aid-yW-8tI" secondAttribute="trailing" constant="21" id="FWG-pc-yv0"/>
                             <constraint firstItem="aid-yW-8tI" firstAttribute="centerX" secondItem="4kq-Xd-8FM" secondAttribute="centerX" constant="0.5" id="GNX-7U-jZn"/>
@@ -1554,7 +1359,7 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                             <constraint firstItem="aid-yW-8tI" firstAttribute="centerY" secondItem="4kq-Xd-8FM" secondAttribute="centerY" constant="-0.5" id="LOw-rM-hCj"/>
                             <constraint firstItem="aid-yW-8tI" firstAttribute="bottom" secondItem="ppm-86-9G0" secondAttribute="bottom" constant="-18" id="Pyy-ya-fnt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Lf6-m1-oAk" secondAttribute="trailing" constant="-20" id="Wg1-1G-vnO"/>
-                            <constraint firstAttribute="trailing" secondItem="ppm-86-9G0" secondAttribute="trailing" constant="-1" id="bFo-GX-rWK"/>
+                            <constraint firstAttribute="trailing" secondItem="ppm-86-9G0" secondAttribute="trailing" id="bFo-GX-rWK"/>
                             <constraint firstItem="s2a-zz-Dbk" firstAttribute="leading" secondItem="L7s-7l-8TV" secondAttribute="leading" id="bjK-Nl-IDr"/>
                             <constraint firstItem="liA-rI-ydt" firstAttribute="leading" secondItem="L7s-7l-8TV" secondAttribute="leadingMargin" constant="-20" id="brl-X1-LGv"/>
                             <constraint firstItem="Lf6-m1-oAk" firstAttribute="top" secondItem="liA-rI-ydt" secondAttribute="bottom" constant="5" id="cuC-fz-WhZ"/>
@@ -1562,7 +1367,7 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                             <constraint firstItem="ppm-86-9G0" firstAttribute="top" secondItem="QWG-y3-WwF" secondAttribute="bottom" constant="-1" id="euO-oT-Hhi"/>
                             <constraint firstItem="smU-yz-fbR" firstAttribute="centerX" secondItem="ppm-86-9G0" secondAttribute="centerX" constant="-1" id="fGv-w7-Pkm"/>
                             <constraint firstItem="s2a-zz-Dbk" firstAttribute="top" secondItem="liA-rI-ydt" secondAttribute="bottom" id="r4c-uh-VR4"/>
-                            <constraint firstItem="ppm-86-9G0" firstAttribute="leading" secondItem="zH7-Yy-0QY" secondAttribute="trailing" constant="1" id="rO4-jA-2me"/>
+                            <constraint firstItem="ppm-86-9G0" firstAttribute="leading" secondItem="zH7-Yy-0QY" secondAttribute="trailing" id="rO4-jA-2me"/>
                             <constraint firstItem="aid-yW-8tI" firstAttribute="trailing" secondItem="4kq-Xd-8FM" secondAttribute="trailing" constant="-6" id="s2B-9M-AE2"/>
                             <constraint firstItem="zH7-Yy-0QY" firstAttribute="top" secondItem="QWG-y3-WwF" secondAttribute="bottom" id="vh9-6b-Udf"/>
                             <constraint firstAttribute="trailing" secondItem="s2a-zz-Dbk" secondAttribute="trailing" id="xGB-A9-sgn"/>
@@ -1574,7 +1379,6 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                 <exclude reference="4kq-Xd-8FM"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="5rv-Vs-uYW"/>
                                 <exclude reference="GNX-7U-jZn"/>
                                 <exclude reference="LOw-rM-hCj"/>
                                 <exclude reference="Pyy-ya-fnt"/>
@@ -1587,7 +1391,6 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                 <include reference="4kq-Xd-8FM"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="5rv-Vs-uYW"/>
                                 <include reference="GNX-7U-jZn"/>
                                 <include reference="LOw-rM-hCj"/>
                                 <include reference="Pyy-ya-fnt"/>
@@ -1623,65 +1426,56 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                         <viewControllerLayoutGuide type="bottom" id="bIh-KM-qTy"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Xf0-tS-rJ2">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5CE-vk-hLD">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uD9-8O-qbo">
-                                        <rect key="frame" x="8" y="434" width="584" height="45"/>
-                                        <color key="backgroundColor" red="0.24705882352941178" green="0.84705882352941175" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.24705882352941178" green="0.84705882352941175" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="Jqc-fc-gvM"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <state key="normal" title="SHARE">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <state key="selected" backgroundImage="GreenButton click.png"/>
-                                        <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="8" y="45" width="384" height="44"/>
-                                        </variation>
                                         <connections>
                                             <action selector="nextToCamOrStagingAction:" destination="pgL-hd-ALy" eventType="touchUpInside" id="HBn-K1-IHQ"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who do you want to share with?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="se3-hp-EpM">
-                                        <rect key="frame" x="148" y="8" width="304" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="IbA-wf-gE0"/>
                                             <constraint firstAttribute="width" constant="304" id="PyJ-Jq-pIt"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="PdC-sY-GtY">
-                                        <rect key="frame" x="0.0" y="37" width="600" height="381"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <prototypes>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="friendTableCellIdentifier" rowHeight="44" id="M8f-2r-7wJ" customClass="FriendsTableViewCell">
-                                                <rect key="frame" x="0.0" y="22" width="600" height="44"/>
+                                                <rect key="frame" x="0.0" y="22" width="1000" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M8f-2r-7wJ" id="QYQ-fg-QyV">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                                    <frame key="frameInset" width="1000" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAe-Y9-nO7">
-                                                            <rect key="frame" x="10" y="11" width="560" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button hidden="YES" opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1eI-7A-czo">
-                                                            <rect key="frame" x="578" y="14" width="6" height="16"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="6" id="1bj-lO-Sxq"/>
                                                                 <constraint firstAttribute="height" constant="16" id="jqC-Sr-7am"/>
                                                             </constraints>
                                                             <state key="normal" image="Dropmenublue.png">
-                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             </state>
                                                             <state key="selected" image="DropMenugray.png"/>
                                                             <connections>
@@ -1697,7 +1491,7 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                                         <constraint firstItem="1eI-7A-czo" firstAttribute="leading" secondItem="MAe-Y9-nO7" secondAttribute="trailing" constant="8" id="wf0-7t-8Jq"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <outlet property="friendNameLbl" destination="MAe-Y9-nO7" id="vUl-DC-R8Q"/>
                                                     <outlet property="unfriendBtn" destination="1eI-7A-czo" id="iPI-28-ryc"/>
@@ -1710,7 +1504,7 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                         </connections>
                                     </tableView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="uD9-8O-qbo" firstAttribute="leading" secondItem="5CE-vk-hLD" secondAttribute="leading" constant="8" id="518-aQ-wby"/>
                                     <constraint firstAttribute="centerX" secondItem="se3-hp-EpM" secondAttribute="centerX" id="BJt-Yx-Qi6"/>
@@ -1723,17 +1517,19 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                     <constraint firstAttribute="trailing" secondItem="PdC-sY-GtY" secondAttribute="trailing" id="yJ5-tF-7ts"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badgeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="lCl-ni-4UT">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="badgeIcon" translatesAutoresizingMaskIntoConstraints="NO" id="lCl-ni-4UT">
+                                <frame key="frameInset" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FUw-AS-k21">
-                                <rect key="frame" x="542" y="67" width="17" height="17"/>
+                                <frame key="frameInset" minX="542" minY="67" width="17" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="5CE-vk-hLD" firstAttribute="top" secondItem="yff-Tg-8hG" secondAttribute="bottom" id="DYS-oT-xl4"/>
                             <constraint firstItem="bIh-KM-qTy" firstAttribute="top" secondItem="5CE-vk-hLD" secondAttribute="bottom" constant="5" id="WLq-uE-RAr"/>
@@ -1754,7 +1550,7 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="12y-Jc-iW2">
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="ZGi-fA-Guf">
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -1779,23 +1575,20 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                         <viewControllerLayoutGuide type="bottom" id="mzD-QJ-vqM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2I5-nW-pJH">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhL-VN-Wkl">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KzG-fO-PVL">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In to see privately shared photos from your friends and family" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqy-ge-xU2">
-                                                <rect key="frame" x="135" y="220" width="330" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="330" id="c6W-3e-NXe"/>
                                                     <constraint firstAttribute="height" constant="45" id="xUe-V8-i9f"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <color key="textColor" red="0.17647058823529413" green="0.35686274509803922" blue="0.56470588235294117" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.17647058823529413" green="0.35686274509803922" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
@@ -1811,7 +1604,6 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                                 </variation>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Username" minimumFontSize="17" background="Textbox.png" translatesAutoresizingMaskIntoConstraints="NO" id="yWF-et-ppn">
-                                                <rect key="frame" x="152" y="277" width="313" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="313" id="6KT-Ye-aTL"/>
                                                     <constraint firstAttribute="height" constant="36" id="d5p-F1-Z7t"/>
@@ -1832,7 +1624,6 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                                 </variation>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" background="Textbox.png" translatesAutoresizingMaskIntoConstraints="NO" id="9kJ-np-7JZ">
-                                                <rect key="frame" x="152" y="318" width="313" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="36" id="I4B-AF-rUA"/>
                                                     <constraint firstAttribute="width" constant="313" id="X0D-qY-rer"/>
@@ -1853,26 +1644,24 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                                 </variation>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R6U-l8-fbk">
-                                                <rect key="frame" x="404" y="321" width="50" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <state key="normal" title="Forgot?">
-                                                    <color key="titleColor" red="0.2156862745" green="0.37647058820000001" blue="0.57254901960000004" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleColor" red="0.2156862745" green="0.37647058820000001" blue="0.57254901960000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <segue destination="1ez-cs-eG8" kind="show" id="4EG-TC-MER"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XWn-kb-al6">
-                                                <rect key="frame" x="218" y="362" width="165" height="36"/>
-                                                <color key="backgroundColor" red="0.24705882352941178" green="0.84705882352941175" blue="0.6705882352941176" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.24705882352941178" green="0.84705882352941175" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="165" id="JpN-Fx-E8m"/>
                                                     <constraint firstAttribute="height" constant="36" id="VBQ-RE-UhV"/>
                                                 </constraints>
                                                 <state key="normal" title="Go">
-                                                    <color key="titleColor" red="0.027450980392156862" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleColor" red="0.027450980392156862" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1896,7 +1685,6 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="superPicLogo" translatesAutoresizingMaskIntoConstraints="NO" id="b2O-2J-wtM">
-                                                <rect key="frame" x="255" y="78" width="90" height="90"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="90" id="1YL-gk-cJZ"/>
                                                 </constraints>
@@ -1912,12 +1700,11 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                                 </variation>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALe-ef-qKb">
-                                                <rect key="frame" x="261" y="180" width="79" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="OqS-Yr-CyA"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                                <color key="textColor" red="0.1803921568627451" green="0.30588235294117649" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.1803921568627451" green="0.30588235294117649" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
@@ -1931,16 +1718,15 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                                 </variation>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJc-SD-847">
-                                                <rect key="frame" x="16" y="78" width="30" height="31"/>
                                                 <state key="normal" image="BackButton.png">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="backBtnAction:" destination="gkz-WZ-Vts" eventType="touchUpInside" id="ydh-Ul-8Yx"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="centerX" secondItem="yWF-et-ppn" secondAttribute="centerX" id="3gt-wx-pX0"/>
                                             <constraint firstAttribute="centerX" secondItem="XWn-kb-al6" secondAttribute="centerX" id="D3Q-7h-oxA"/>
@@ -1974,23 +1760,23 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                                 <exclude reference="YJc-SD-847"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <exclude reference="QAb-I7-JuC"/>
-                                                <exclude reference="atn-tF-JAP"/>
-                                                <exclude reference="I0G-0j-nbz"/>
-                                                <exclude reference="RNi-26-ZYf"/>
-                                                <exclude reference="IpJ-dU-FxW"/>
-                                                <exclude reference="K6a-l9-BMb"/>
-                                                <exclude reference="JXh-la-bi0"/>
-                                                <exclude reference="ytK-gv-GIy"/>
-                                                <exclude reference="3gt-wx-pX0"/>
-                                                <exclude reference="v4c-lL-LAk"/>
                                                 <exclude reference="au2-Em-HBM"/>
                                                 <exclude reference="hl3-1T-H7H"/>
                                                 <exclude reference="j4y-wg-jGm"/>
+                                                <exclude reference="JXh-la-bi0"/>
+                                                <exclude reference="ytK-gv-GIy"/>
+                                                <exclude reference="xpm-gB-dcx"/>
                                                 <exclude reference="D3Q-7h-oxA"/>
                                                 <exclude reference="dkk-7H-ccO"/>
                                                 <exclude reference="v5C-pW-2re"/>
-                                                <exclude reference="xpm-gB-dcx"/>
+                                                <exclude reference="QAb-I7-JuC"/>
+                                                <exclude reference="atn-tF-JAP"/>
+                                                <exclude reference="IpJ-dU-FxW"/>
+                                                <exclude reference="K6a-l9-BMb"/>
+                                                <exclude reference="I0G-0j-nbz"/>
+                                                <exclude reference="RNi-26-ZYf"/>
+                                                <exclude reference="3gt-wx-pX0"/>
+                                                <exclude reference="v4c-lL-LAk"/>
                                             </mask>
                                         </variation>
                                         <variation key="widthClass=compact">
@@ -2005,23 +1791,23 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                                 <include reference="YJc-SD-847"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <include reference="QAb-I7-JuC"/>
-                                                <include reference="atn-tF-JAP"/>
-                                                <include reference="I0G-0j-nbz"/>
-                                                <include reference="RNi-26-ZYf"/>
-                                                <include reference="IpJ-dU-FxW"/>
-                                                <include reference="K6a-l9-BMb"/>
-                                                <include reference="JXh-la-bi0"/>
-                                                <include reference="ytK-gv-GIy"/>
-                                                <include reference="3gt-wx-pX0"/>
-                                                <include reference="v4c-lL-LAk"/>
                                                 <include reference="au2-Em-HBM"/>
                                                 <include reference="hl3-1T-H7H"/>
                                                 <include reference="j4y-wg-jGm"/>
+                                                <include reference="JXh-la-bi0"/>
+                                                <include reference="ytK-gv-GIy"/>
+                                                <include reference="xpm-gB-dcx"/>
                                                 <include reference="D3Q-7h-oxA"/>
                                                 <include reference="dkk-7H-ccO"/>
                                                 <include reference="v5C-pW-2re"/>
-                                                <include reference="xpm-gB-dcx"/>
+                                                <include reference="QAb-I7-JuC"/>
+                                                <include reference="atn-tF-JAP"/>
+                                                <include reference="IpJ-dU-FxW"/>
+                                                <include reference="K6a-l9-BMb"/>
+                                                <include reference="I0G-0j-nbz"/>
+                                                <include reference="RNi-26-ZYf"/>
+                                                <include reference="3gt-wx-pX0"/>
+                                                <include reference="v4c-lL-LAk"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -2062,7 +1848,7 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                 </variation>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="bhL-VN-Wkl" firstAttribute="leading" secondItem="2I5-nW-pJH" secondAttribute="leading" id="Fc0-g3-29l"/>
                             <constraint firstAttribute="trailing" secondItem="bhL-VN-Wkl" secondAttribute="trailing" id="Shz-U8-8sG"/>
@@ -2112,22 +1898,19 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                         <viewControllerLayoutGuide type="bottom" id="gwM-Ot-eXQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LTq-8r-00s">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCg-Qf-Xpn">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IqA-tz-6wC">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bf1-RN-sKz">
-                                                <rect key="frame" x="196" y="202" width="209" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="TK0-72-xWv"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                                <color key="textColor" red="0.25490196078431371" green="0.396078431372549" blue="0.58039215686274515" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.25490196078431371" green="0.396078431372549" blue="0.58039215686274515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
@@ -2141,14 +1924,13 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                                 </variation>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7g-NY-ED3">
-                                                <rect key="frame" x="218" y="360" width="165" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="165" id="J6L-Ki-dvT"/>
                                                     <constraint firstAttribute="height" constant="36" id="vuE-dN-95c"/>
                                                 </constraints>
                                                 <state key="normal" title="Send" backgroundImage="GreenButton.png">
-                                                    <color key="titleColor" red="0.039215686274509803" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleColor" red="0.039215686274509803" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <variation key="default">
                                                     <mask key="constraints">
@@ -2167,7 +1949,6 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="superPicLogo" translatesAutoresizingMaskIntoConstraints="NO" id="WaC-3F-4VE">
-                                                <rect key="frame" x="255" y="79" width="90" height="90"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="90" id="9ib-R3-nOM"/>
                                                     <constraint firstAttribute="height" constant="90" id="PYP-WN-ry8"/>
@@ -2186,13 +1967,12 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                                 </variation>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your Email Address below and we'll send you the instructions on how to change your password." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lls-ve-N4z">
-                                                <rect key="frame" x="158" y="243" width="285" height="72"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="285" id="IuM-Gs-B8q"/>
                                                     <constraint firstAttribute="height" constant="72" id="q8Y-mh-4xN"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                <color key="textColor" red="0.12156862745098039" green="0.34901960784313724" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="textColor" red="0.12156862745098039" green="0.34901960784313724" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
@@ -2208,9 +1988,8 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                                 </variation>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LCA-7M-8FN">
-                                                <rect key="frame" x="16" y="81" width="30" height="31"/>
                                                 <state key="normal" image="BackButton.png">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="backBtnAction:" destination="gkz-WZ-Vts" eventType="touchUpInside" id="aqB-kM-dhS"/>
@@ -2218,7 +1997,6 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" background="Textbox.png" translatesAutoresizingMaskIntoConstraints="NO" id="HQV-UB-Kxb">
-                                                <rect key="frame" x="158" y="317" width="285" height="36"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="285" id="0Jx-OY-FXV"/>
                                                     <constraint firstAttribute="height" constant="36" id="oHS-Od-ysq"/>
@@ -2239,7 +2017,7 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                                 </variation>
                                             </textField>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="LCA-7M-8FN" firstAttribute="top" secondItem="IqA-tz-6wC" secondAttribute="top" constant="18" id="3AK-u2-YC5"/>
                                             <constraint firstAttribute="centerX" secondItem="HQV-UB-Kxb" secondAttribute="centerX" id="4Z5-GR-wIP">
@@ -2267,16 +2045,16 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                                 <exclude reference="HQV-UB-Kxb"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <exclude reference="3AK-u2-YC5"/>
-                                                <exclude reference="7t6-Gy-urj"/>
-                                                <exclude reference="n6O-JK-5P8"/>
-                                                <exclude reference="qg9-AP-ugd"/>
                                                 <exclude reference="9PS-tk-nU7"/>
                                                 <exclude reference="tM1-UF-4sc"/>
-                                                <exclude reference="BRc-cQ-BgJ"/>
-                                                <exclude reference="vmh-Ny-Mqr"/>
                                                 <exclude reference="4Z5-GR-wIP"/>
                                                 <exclude reference="oFQ-Xk-zTo"/>
+                                                <exclude reference="3AK-u2-YC5"/>
+                                                <exclude reference="7t6-Gy-urj"/>
+                                                <exclude reference="BRc-cQ-BgJ"/>
+                                                <exclude reference="vmh-Ny-Mqr"/>
+                                                <exclude reference="n6O-JK-5P8"/>
+                                                <exclude reference="qg9-AP-ugd"/>
                                                 <exclude reference="8n2-pG-lFS"/>
                                                 <exclude reference="rYS-Im-Qz0"/>
                                                 <exclude reference="ybO-2H-eM2"/>
@@ -2292,16 +2070,16 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                                 <include reference="HQV-UB-Kxb"/>
                                             </mask>
                                             <mask key="constraints">
-                                                <include reference="3AK-u2-YC5"/>
-                                                <include reference="7t6-Gy-urj"/>
-                                                <include reference="n6O-JK-5P8"/>
-                                                <include reference="qg9-AP-ugd"/>
                                                 <include reference="9PS-tk-nU7"/>
                                                 <include reference="tM1-UF-4sc"/>
-                                                <include reference="BRc-cQ-BgJ"/>
-                                                <include reference="vmh-Ny-Mqr"/>
                                                 <include reference="4Z5-GR-wIP"/>
                                                 <include reference="oFQ-Xk-zTo"/>
+                                                <include reference="3AK-u2-YC5"/>
+                                                <include reference="7t6-Gy-urj"/>
+                                                <include reference="BRc-cQ-BgJ"/>
+                                                <include reference="vmh-Ny-Mqr"/>
+                                                <include reference="n6O-JK-5P8"/>
+                                                <include reference="qg9-AP-ugd"/>
                                                 <include reference="8n2-pG-lFS"/>
                                                 <include reference="rYS-Im-Qz0"/>
                                                 <include reference="ybO-2H-eM2"/>
@@ -2345,7 +2123,7 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                 </variation>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="dCg-Qf-Xpn" firstAttribute="leading" secondItem="LTq-8r-00s" secondAttribute="leading" id="K9D-oe-Pht"/>
                             <constraint firstAttribute="trailing" secondItem="dCg-Qf-Xpn" secondAttribute="trailing" id="MaH-KN-Ymv"/>
@@ -2403,31 +2181,13 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
             </objects>
             <point key="canvasLocation" x="458.99999999999994" y="-327.99999999999994"/>
         </scene>
-        <!--Gallery Badge View Controller-->
-        <scene sceneID="sV4-zP-I6K">
-            <objects>
-                <tabBarController storyboardIdentifier="SPTabBarcontrollerSBIde" automaticallyAdjustsScrollViewInsets="NO" id="G1m-zg-P67" customClass="GalleryBadgeViewController" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="xxR-Sz-bVh"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="eqI-vB-W5j">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="Xnn-xF-M8l" kind="relationship" relationship="viewControllers" id="QCF-OX-LBb"/>
-                        <segue destination="TWx-ZK-XoR" kind="relationship" relationship="viewControllers" id="0dS-v1-jYH"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qoq-Uk-QXY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2742" y="-222.99999999999997"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="IHz-Dq-WyR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xnn-xF-M8l" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="Yly-xO-kC1"/>
+                    <tabBarItem key="tabBarItem" title="" image="tabhome.png" id="Yly-xO-kC1">
+                        <inset key="imageInsets" minX="5" minY="5" maxX="-5" maxY="-5"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VR1-4l-uxa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -2442,40 +2202,6 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
             </objects>
             <point key="canvasLocation" x="3536.9999999999995" y="-924.99999999999989"/>
         </scene>
-        <!--Gallery View Controller-->
-        <scene sceneID="puT-OA-gNm">
-            <objects>
-                <collectionViewController id="3Ty-ac-BWb" customClass="GalleryViewController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="qeL-ck-YmR">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="evn-L7-XeA">
-                            <size key="itemSize" width="116" height="130"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="IAu-ca-zuX">
-                                <rect key="frame" x="0.0" y="0.0" width="116" height="130"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="116" height="130"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="3Ty-ac-BWb" id="uGo-O9-kuM"/>
-                            <outlet property="delegate" destination="3Ty-ac-BWb" id="5xj-jF-aT4"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ecd-ju-JO6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4205" y="621"/>
-        </scene>
         <!--Add Contacts View Controller-->
         <scene sceneID="FkM-fc-eK3">
             <objects>
@@ -2485,53 +2211,49 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                         <viewControllerLayoutGuide type="bottom" id="db0-Hz-Nxq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FbM-TD-bF1">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Users" translucent="NO" backgroundImage="searchbarbackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="SsL-Px-DQi">
-                                <rect key="frame" x="8" y="72" width="584" height="44"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <searchBar contentMode="redraw" placeholder="Search Users" translucent="NO" backgroundImage="searchbarbackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="SsL-Px-DQi">
+                                <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="KlK-x5-OqE"/>
                                 </constraints>
-                                <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="barTintColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <offsetWrapper key="searchFieldBackgroundPositionAdjustment" horizontal="0.0" vertical="0.0"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="a9j-fM-lKB" id="yTE-Nj-hb6"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DuE-5G-JrU">
-                                <rect key="frame" x="0.0" y="124" width="600" height="476"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DuE-5G-JrU">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="searchFriendCellIdentifier" id="0ed-Ko-osB" customClass="FriendContactTableViewCell">
-                                        <rect key="frame" x="0.0" y="22" width="600" height="70"/>
+                                        <rect key="frame" x="0.0" y="22" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0ed-Ko-osB" id="R8t-y0-4Ce">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
+                                            <frame key="frameInset" width="375" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="300" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Zh-Ja-DhC">
-                                                    <rect key="frame" x="25" y="16" width="378" height="38"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="38" id="3Qk-XG-00D"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdR-C4-6TX">
-                                                    <rect key="frame" x="492" y="16" width="100" height="38"/>
-                                                    <color key="backgroundColor" red="0.26340454616347458" green="0.90236347853535359" blue="0.78234343171114928" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.26340454616347458" green="0.90236347853535359" blue="0.78234343171114928" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="6vu-sL-wlB"/>
                                                         <constraint firstAttribute="height" constant="38" id="kz3-Ut-mBi"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <state key="normal" title="Add Friend">
-                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
@@ -2543,17 +2265,15 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="nkT-iC-8xj">
-                                                    <rect key="frame" x="434" y="24" width="50" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="3gR-Kc-CRs"/>
                                                         <constraint firstAttribute="height" constant="21" id="7dr-Ag-Ffc"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.png" translatesAutoresizingMaskIntoConstraints="NO" id="aUI-8y-4Rb">
-                                                    <rect key="frame" x="411" y="28" width="15" height="14"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="15" id="Bgn-hx-G1J"/>
                                                         <constraint firstAttribute="height" constant="14" id="gME-hf-GCp"/>
@@ -2584,7 +2304,7 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="DuE-5G-JrU" firstAttribute="top" secondItem="SsL-Px-DQi" secondAttribute="bottom" constant="8" id="Ffl-q6-LvP"/>
                             <constraint firstItem="db0-Hz-Nxq" firstAttribute="top" secondItem="DuE-5G-JrU" secondAttribute="bottom" id="I7x-TO-2QF"/>
@@ -2615,11 +2335,13 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
             </objects>
             <point key="canvasLocation" x="5008" y="-935"/>
         </scene>
-        <!--Item 2-->
+        <!--Navigation Controller-->
         <scene sceneID="HNC-Vq-jNP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TWx-ZK-XoR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="f1n-tu-Tyc"/>
+                    <tabBarItem key="tabBarItem" title="" image="tabcamera.png" id="f1n-tu-Tyc">
+                        <inset key="imageInsets" minX="5" minY="5" maxX="-5" maxY="-5"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uTU-lH-bJe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -2632,7 +2354,25 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SEt-cC-i7N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3536.9999999999995" y="-190.99999999999997"/>
+            <point key="canvasLocation" x="3537" y="-60"/>
+        </scene>
+        <!--Gallery Badge View Controller-->
+        <scene sceneID="ijM-da-o9e">
+            <objects>
+                <tabBarController storyboardIdentifier="SPTabBarcontrollerSBIde" id="YHk-d5-dft" customClass="GalleryBadgeViewController" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="FzQ-xL-BRz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Xnn-xF-M8l" kind="relationship" relationship="viewControllers" id="hDj-v6-tzd"/>
+                        <segue destination="TWx-ZK-XoR" kind="relationship" relationship="viewControllers" id="CP3-PS-Wdy"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nCs-vN-8p8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2742" y="-233"/>
         </scene>
     </scenes>
     <resources>
@@ -2644,7 +2384,6 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
         <image name="GreenButton.png" width="384" height="44"/>
         <image name="Sad_face_512.png" width="512" height="512"/>
         <image name="SignupButton.png" width="115" height="43"/>
-        <image name="SolidBlueTickButton.png" width="17" height="17"/>
         <image name="Textbox.png" width="206" height="33"/>
         <image name="badgeIcon" width="22" height="22"/>
         <image name="close.png" width="44" height="44"/>
@@ -2654,6 +2393,7 @@ SuperPic may modify or update this Privacy Policy from time to time, so please r
         <image name="signButton click small.png" width="120" height="30"/>
         <image name="star.png" width="14" height="13"/>
         <image name="superPicLogo" width="90" height="90"/>
-        <image name="videoplay.png" width="42" height="42"/>
+        <image name="tabcamera.png" width="44" height="44"/>
+        <image name="tabhome.png" width="44" height="44"/>
     </resources>
 </document>
